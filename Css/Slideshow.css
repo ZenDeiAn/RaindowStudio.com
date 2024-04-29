@@ -24,16 +24,20 @@ body {
 
 .slideshow-container {
   min-height: 300px;
+  max-height: 300px;
   position: relative;
   margin: auto;
 }
 
 /* Slideshow Image Styles */
 .Slideshow img {
-  border-top-left-radius: 15px; 
-  border-top-right-radius: 15px;
+  border-top-left-radius: 0px; 
+  border-top-right-radius: 0px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  max-height: 500px; /* Adjust the height as needed */
+  object-fit: cover; /* Ensures the image covers the entire container */
+  object-position: top;
 }
 
 /* Slideshow Text Overlay Styles */
