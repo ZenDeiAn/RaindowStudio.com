@@ -17,51 +17,65 @@
                 left: 5%;
                 transform: translate(0%, -50%);
                 color: aliceblue;
-                background-color: #333; /* 修改为您想要的背景颜色 */
+                background-color: #333;
                 z-index: 10;
             }
             body {
-                background-color: #333; /* 修改为您想要的背景颜色 */
+                background-color: #333;
             }
             /* Make the image fully responsive */
             .carousel-inner img {
                 width: 100%;
                 height: 100%;
+                z-index: 1;
+            }
+            .logo
+            {
+              width: auto; 
+              height: 7.5%;
+              top: 5%;
+              left: 10%;
+              position: absolute;
+              z-index: 10; /* Ensure this is above the carousel */
             }
         </style>
     </head>
     <body>
+      <img src="./Image/RaindowStudioLogo.png" class="logo" alt="Logo" title="RaindowStudio Logo">
+      
         <div class="container mt-3">
+          <div id="Carousel" class="carousel slide" data-ride="carousel">
+          
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
 
-
-            <div id="Carousel" class="carousel slide" data-ride="carousel">
+              <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#Carousel" data-slide-to="1"></li>
+              <li data-target="#Carousel" data-slide-to="2"></li>
+              <li data-target="#Carousel" data-slide-to="3"></li>
             
-              <!-- Indicators -->
-              <ul class="carousel-indicators">
-                <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#Carousel" data-slide-to="1"></li>
-                <li data-target="#Carousel" data-slide-to="2"></li>
-              </ul>
-              
-              <!-- The slideshow -->
-              <div class="carousel-inner">
-                <h1>RaindowStudio</h1>
-                <div class="carousel-item active">
-                  <img src="./Image/Index/SlideShow_1.jpg" alt="Sky" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                  <img src="./Image/Index/SlideShow_3.jpg" alt="Sea" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                  <img src="./Image/Index/SlideShow_5.jpg" alt="Grass" width="1100" height="500">
-                </div>
-                <div class="carousel-item">
-                  <img src="./Image/Index/SlideShow_6.jpg" alt="Tree" width="1100" height="500">
-                </div>
+            </ul>
+            
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <img src="./Image/Index/SlideShow_1.jpg" alt="Sky" width="1920" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="./Image/Index/SlideShow_3.jpg" alt="Sea" width="1920" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="./Image/Index/SlideShow_5.jpg" alt="Grass" width="1920" height="500">
+              </div>
+              <div class="carousel-item">
+                <img src="./Image/Index/SlideShow_6.jpg" alt="Tree" width="1920" height="500">
               </div>
 
             </div>
-            
-            </div>
+
+          </div>
+        </div>
+        
     </body>
 </html>
