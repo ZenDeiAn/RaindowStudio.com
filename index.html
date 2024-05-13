@@ -18,13 +18,22 @@
             .carousel-inner
             {
                 overflow: hidden;
-                max-height: 1500px;
+                max-height: 700px;
             }
 
-            .carousel-inner img
+            .carousel-inner-forground
+            {
+                width: 100%;
+                height: auto;
+                max-width: 2000px;
+                max-height: 700px;
+            }
+
+            .carousel-inner-background
             {
                 width: 100%;
                 height: 100%;
+                position: absolute;
                 filter: blur(50px);
             }
 
@@ -59,17 +68,20 @@
             <div class="carousel-inner">
 
               <div class="carousel-item active">
-                <img src="./Image/Index/SlideShow_1.jpg" alt="Sky" width="1100 " height="500">
-                <img src="./Image/Index/SlideShow_1.jpg" alt="Sky" width="1100 " height="500">
+                <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-forground" alt="Sky" width="1100 " height="500">
+                <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-background" alt="Sky" width="1100 " height="500">
               </div>
               <div class="carousel-item">
-                <img src="./Image/Index/SlideShow_3.jpg" alt="Sea" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-forground" alt="Sea" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-background" alt="Sea" width="1100" height="500">
               </div>
               <div class="carousel-item">
-                <img src="./Image/Index/SlideShow_5.jpg" alt="Grass" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-forground" alt="Grass" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-background" alt="Grass" width="1100" height="500">
               </div>
               <div class="carousel-item">
-                <img src="./Image/Index/SlideShow_6.jpg" alt="Tree" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-forground" alt="Tree" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-background" alt="Tree" width="1100" height="500">
               </div>
 
             </div>
