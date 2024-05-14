@@ -12,37 +12,53 @@
 
             body 
             {
-                background-color: #333;
+              background-color: #333;
             }
             
             .carousel-inner
             {
-                overflow: hidden;
-                max-height: 700px;
+              overflow: hidden;
+              max-height: 700px;
+            }
+
+            .carousel-inner img
+            {
+              border-style: hidden;
+              border: 0px;
+              border-width: 0px;
+              display: inline-block;
+              content: "";
             }
 
             .carousel-inner-forground
             {
-                width: 100%;
-                height: auto;
-                max-width: 2000px;
-                max-height: 700px;
+              width: 100%;
+              height: auto;
+              max-width: 2000px;
+              max-height: 700px;
+              margin-left: auto;
+              margin-right: auto;
+              z-index: 9;
+              box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
             }
 
             .carousel-inner-background
             {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                filter: blur(50px);
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              filter: blur(50px);
+              z-index: 8;
             }
 
             .logo
             {
               width: 20%; 
               height: auto;
-              top: 50px;
-              left: 50px;
+              max-width: 581px;
+              max-height: 200px;
+              top: 25px;
+              left: 25px;
               position: absolute;
               z-index: 10; /* Ensure this is above the carousel */
             }
@@ -68,21 +84,29 @@
             <div class="carousel-inner">
 
               <div class="carousel-item active">
-                <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-forground" alt="Sky" width="1100 " height="500">
-                <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-background" alt="Sky" width="1100 " height="500">
+                <div class="d-flex justify-content-center">
+                  <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-forground" alt="Sky" width="1100 " height="500">
+                  <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-background" alt="Sky" width="1100 " height="500">
+                </div>
               </div>
               <div class="carousel-item">
+                <div class="d-flex justify-content-center">
                 <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-forground" alt="Sea" width="1100" height="500">
                 <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-background" alt="Sea" width="1100" height="500">
               </div>
+            </div>
               <div class="carousel-item">
+                <div class="d-flex justify-content-center">
                 <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-forground" alt="Grass" width="1100" height="500">
                 <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-background" alt="Grass" width="1100" height="500">
               </div>
+            </div>
               <div class="carousel-item">
+                <div class="d-flex justify-content-center">
                 <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-forground" alt="Tree" width="1100" height="500">
                 <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-background" alt="Tree" width="1100" height="500">
               </div>
+            </div>
 
             </div>
 
