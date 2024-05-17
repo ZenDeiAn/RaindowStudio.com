@@ -39,7 +39,7 @@
               margin-left: auto;
               margin-right: auto;
               z-index: 9;
-              box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+              box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.5);
             }
 
             .carousel-inner-background
@@ -47,7 +47,7 @@
               width: 100%;
               height: 100%;
               position: absolute;
-              filter: blur(50px);
+              filter: blur(50px) brightness(0.5);
               z-index: 8;
             }
 
@@ -65,7 +65,7 @@
         </style>
     </head>
     <body>
-      <img src="./Image/RaindowStudioLogo.png" class="logo" alt="Logo" title="RaindowStudio Logo">
+      <!--<img src="./Image/RaindowStudioLogo.png" class="logo" alt="Logo" title="RaindowStudio Logo">-->
       
 
           <div id="Carousel" class="carousel slide" data-ride="carousel">
@@ -85,32 +85,51 @@
 
               <div class="carousel-item active">
                 <div class="d-flex justify-content-center">
-                  <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-forground" alt="Sky" width="1100 " height="500">
+                  <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-forground" alt="Sky" width="1100 " height="500" data-toggle="tooltip" data-placement="top"  title="Photo taken by DeiAnzen.">
                   <img src="./Image/Index/SlideShow_1.jpg" class="carousel-inner-background" alt="Sky" width="1100 " height="500">
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="d-flex justify-content-center">
-                <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-forground" alt="Sea" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-forground" alt="Sea" width="1100" height="500" data-toggle="tooltip" data-placement="top"  title="Photo taken by DeiAnzen.">
                 <img src="./Image/Index/SlideShow_3.jpg" class="carousel-inner-background" alt="Sea" width="1100" height="500">
+                </div>
               </div>
-            </div>
               <div class="carousel-item">
                 <div class="d-flex justify-content-center">
-                <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-forground" alt="Grass" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-forground" alt="Grass" width="1100" height="500" data-toggle="tooltip" data-placement="top"  title="Photo taken by DeiAnzen.">
                 <img src="./Image/Index/SlideShow_5.jpg" class="carousel-inner-background" alt="Grass" width="1100" height="500">
+                </div>
               </div>
-            </div>
               <div class="carousel-item">
                 <div class="d-flex justify-content-center">
-                <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-forground" alt="Tree" width="1100" height="500">
+                <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-forground" alt="Tree" width="1100" height="500" data-toggle="tooltip" data-placement="top"  title="Photo taken by DeiAnzen.">
                 <img src="./Image/Index/SlideShow_6.jpg" class="carousel-inner-background" alt="Tree" width="1100" height="500">
+                </div>
               </div>
-            </div>
 
             </div>
 
           </div>
+
+          <nav class="navbar navbar-expand-sm bg-warning navbar-light ">
+            <a class="navbar-brand" href="#">
+              <img src="./Image/RaindowStudioLogo.png" alt="Logo" style="width:auto; height: 40px;">
+            </a>
+            <!-- Links -->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link 3</a>
+              </li>
+            </ul>
+          
+          </nav>
 
         
     </body>
