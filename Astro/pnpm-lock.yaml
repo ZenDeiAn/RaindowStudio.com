@@ -99,9 +99,6 @@ importers:
       svelte:
         specifier: ^4.2.19
         version: 4.2.19
-      tailwindcss:
-        specifier: ^3.4.10
-        version: 3.4.10
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -157,6 +154,9 @@ importers:
       stylus:
         specifier: ^0.63.0
         version: 0.63.0
+      tailwindcss:
+        specifier: ^3.4.10
+        version: 3.4.10
 
 packages:
 
