@@ -2,7 +2,7 @@
 This is my personal blog where I write about [Development](), [Memo](), [Photography](), [Desgin]() etc..
 
 ## References
-> - Built using [Hexo](https://hexo.io/) as the static site generator with [Vivia](https://github.com/saicaca/hexo-theme-vivia) theme.
+> - Built using [Astro](https://astro.build/) as the static site generator with [Fuwari](https://github.com/saicaca/fuwari) theme.
 > - Deployed using [Netlify](https://www.netlify.com/).
 > - The domain is managed via [Namecheap](https://www.namecheap.com/).
 
