@@ -5,7 +5,7 @@ import swup from '@swup/astro';
 import Compress from "astro-compress"
 import icon from "astro-icon"
 import { defineConfig } from "astro/config"
-import netlify from '@astrojs/netlify';
+import netlify from '@astrojs/netlify'
 import Color from "colorjs.io"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeComponents from "rehype-components"; /* Render the custom directive content */
