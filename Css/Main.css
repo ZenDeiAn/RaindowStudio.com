@@ -1,7 +1,0 @@
-.round-image-container img {
-    width: 150px; /* Adjust the width according to your preference */
-    height: 150px; /* Adjust the height according to your preference */
-    border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
-    border: 2px solid #ccc; /* Add a border with 2px width and a color of your choice */
-    object-fit: cover; /* Ensure the image covers the entire container */
- }
