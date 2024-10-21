@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import HeroBG from '~/assets/images/hero-image.png';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -11,6 +12,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { fade } from 'astro:transitions';
 
 const metadata = {
   title: 'RaindowStudio — ZenDeiAn\'s personal blog website. Sharing my life :)',
@@ -23,17 +26,49 @@ const metadata = {
 
   <Hero>
     <Fragment slot="title">
-      Even the sky is <span class="text-accent dark:text-white highlight">raining</span> though, rainbow over the cloud still <span class="text-accent dark:text-white highlight">visible</span>
+      Even the sky is <span class="text-accent dark:text-white highlight">raining</span> though
+      <br>
+       Rainbow over the cloud still <span class="text-accent dark:text-white highlight">visible</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       A Life Style Defined by <span class="text-accent dark:text-white highlight">ZenDeiAn</span>
     </Fragment>
+
+    <Fragment slot="bg">
+      <img id="index-hero-bg" src="/src/assets/images/HomePage_2.jpg">
+      <style>
+        #index-hero-bg {
+          width: 100%;        /* Allow the image to fully cover the width of the viewport */
+          height: 100vh;      /* Ensure the image fully covers the height of the viewport */
+          transform: scale(1.5); /* Start with the image scaled at 120% */
+          object-fit: cover;  /* Maintain the image's aspect ratio, ensuring it covers the viewport */
+          overflow: hidden;
+          opacity: 0;
+          filter: blur(20px);
+          animation: blurFadeInEffect 2s ease-in-out forwards;
+        }
+    
+        @keyframes blurFadeInEffect {
+          0% {
+            transform: scale(1.5);
+            opacity: 0;
+            filter: blur(20px); /* Start with a high blur */
+          }
+          100% {
+            transform: scale(1);
+            size: 100%;
+            opacity: 1;
+            filter: blur(0px); /* End with no blur */
+          }
+        }
+      </style>
+    </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note />
+  <!-- <Note /> -->
 
   <!-- Features Widget *************** -->
 
