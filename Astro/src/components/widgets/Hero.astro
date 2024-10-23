@@ -32,7 +32,7 @@ const {
         {
           tagline && (
             <p
-              class="text-base text-neutral-50 dark:text-stone-900 text-secondary font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-1 motion-safe:md:intersect:animate-fade"
+              class="text-base text-shadow text-neutral-50 dark:text-stone-900 text-secondary font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-1 motion-safe:md:intersect:animate-fade"
               set:html={tagline}
             />
           )
@@ -40,7 +40,7 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold text-neutral-50 dark:text-stone-900 leading-tighter tracking-tighter mb-4 font-heading intersect-once intersect-quarter motion-safe:md:opacity-1 motion-safe:intersect:animate-bounce"
+              class="text-5xl text-shadow md:text-6xl font-bold text-neutral-50 dark:text-stone-900 leading-tighter tracking-tighter mb-4 font-heading intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:intersect:animate-fade"
               set:html={title}
             />
           )
@@ -49,7 +49,7 @@ const {
           { 
             subtitle && (
               <p
-                class="text-xl text-neutral-50 dark:text-stone-900  mb-6 intersect-once intersect-quarter motion-safe:md:opacity-1 motion-safe:md:intersect:animate-fade"
+                class="text-xl text-shadow text-neutral-50 dark:text-stone-900  mb-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
                 set:html={subtitle}
               />
             )
@@ -98,7 +98,14 @@ const {
     </div>
   </div>
 </section>
+
 <!-- Next component -->
-<div class="relative mt-[100vh]">
+<div class="relative mt-[90vh]">
   <!-- Position anchor for next element -->
 </div>
+
+<style>
+  .text-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Custom shadow */
+  }
+</style>
