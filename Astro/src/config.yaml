@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: RaindowStudio
+    template: '%s — RaindowStudio'
+  description: "Personal Blog Website made by DeiAnzen. Build using Astrowind."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: RaindowStudio
     images:
       - url: '~/assets/images/default.png'
         width: 1200

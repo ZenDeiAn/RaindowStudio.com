@@ -1,4 +1,4 @@
----
+<!-- ---
 import { SITE } from 'astrowind:config';
 ---
 
@@ -6,4 +6,15 @@ import { SITE } from 'astrowind:config';
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white flex items-center"
 >
   {SITE?.name}
-</span>
+</span> -->
+
+<img class="hover-image" src="/public/images/Logo.png" alt="Website Logo" width="150" height="100">
+<style>
+  .hover-image {
+    transition: 0.5s; /* Smooth transition */
+  }
+  
+  .hover-image:hover {
+    content: url('/public/images/HomePage_Dark.jpg'); /* Change image source */
+  }
+</style>
