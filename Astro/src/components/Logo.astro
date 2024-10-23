@@ -8,10 +8,11 @@ import { SITE } from 'astrowind:config';
   {SITE?.name}
 </span> -->
 
-<img class="hover-image" src="/public/images/Logo.png" alt="Website Logo" width="150" height="100">
+<img class="hover-image" alt="Website Logo" width="150" height="100">
 <style>
   .hover-image {
     transition: 0.5s; /* Smooth transition */
+    content: url('/src/assets/images/Logo.png');
   }
   
   .hover-image:hover {
