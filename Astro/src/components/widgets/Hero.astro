@@ -1,18 +1,17 @@
 ---
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
-
 import type { Hero as Props } from '~/types';
+import { getPermalink } from '~/utils/permalinks';
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
-
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
-
+  nextUrl,
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
@@ -96,12 +95,22 @@ const {
         }
       </div>
     </div>
-  </div>
-</section>
+  </div>  
+</section>  
 
-<!-- Next component -->
-<div class="relative mt-[90vh]">
-  <!-- Position anchor for next element -->
+<div class="relative mt-[86vh]">
+  <a
+    class="h-[4.5vh] transition duration-300 ease-in-out hover:backdrop-blur-md focus:outline-none flex items-center"
+    href={getPermalink(nextUrl)}
+  />
+
+  <img class="block dark:hidden absolute top-[35%] left-1/2 h-2/5 w-5px object-cover pointer-events-none motion-safe:animate-bounce"
+    src="/src/assets/images/DownArrow.png"
+    alt="Page down button">
+  <img class="hidden dark:block absolute top-[35%] left-1/2 h-2/5 w-5px object-cover pointer-events-none motion-safe:animate-bounce"
+    src="/src/assets/images/DownArrow_Dark.png"
+    alt="Page down button">
+
 </div>
 
 <style>
