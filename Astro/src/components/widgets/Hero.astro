@@ -11,6 +11,7 @@ const {
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
+  page_down_button = await Astro.slots.render('image'),
   nextUrl,
   id,
   bg = await Astro.slots.render('bg'),
@@ -100,17 +101,12 @@ const {
 
 <div class="relative mt-[86vh]">
   <a
-    class="h-[4.5vh] transition duration-300 ease-in-out hover:backdrop-blur-md focus:outline-none flex items-center"
+    class="h-[5vh] transition duration-300 ease-in-out hover:backdrop-blur-md focus:outline-none flex items-center"
     href={getPermalink(nextUrl)}
   />
-
-  <img class="block dark:hidden absolute top-[35%] left-1/2 h-2/5 w-5px object-cover pointer-events-none motion-safe:animate-bounce"
-    src="/public/images/DownArrow.png"
-    alt="Page down button">
-  <img class="hidden dark:block absolute top-[35%] left-1/2 h-2/5 w-5px object-cover pointer-events-none motion-safe:animate-bounce"
-    src="/public/images/DownArrow_Dark.png"
-    alt="Page down button">
-
+  <slot name="page_down_button">
+    {page_down_button ? <Fragment set:html={page_down_button} /> : null}
+  </slot>
 </div>
 
 <style>
