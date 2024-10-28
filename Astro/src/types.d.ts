@@ -215,6 +215,7 @@ export interface Form {
 // WIDGETS
 export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
   nextUrl?:string;
+  page_down_button?: string;
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown;
@@ -285,3 +286,16 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+
+export interface ProfileContent extends Omit<Headline, 'classes'>, Widget {
+  content?: string;
+  image?: string | unknown;
+  items?: Array<Item>;
+  tagImages?: Array<Image>;
+  columns?: number;
+  isReversed?: boolean;
+  isAfterContent?: boolean;
+  callToAction?: CallToAction;
+}
+
+export interface ProfileContent extends Omit<Headline, 'classes'>, Form, Widget {}

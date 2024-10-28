@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
+import ProfileContent from '~/components/widgets/ProfileContent.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
@@ -12,7 +13,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'About Me',
 };
 ---
 
@@ -41,7 +42,7 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <ProfileContent
     id="about"
     columns={3}
     items={[
@@ -70,22 +71,38 @@ const metadata = {
         },
       },
     ]}
+    tagImages={[
+        {
+          src: 'https://img.shields.io/badge/Music-gray?logo=youtubemusic&logoColor=red',
+          alt: 'Tag : Music',
+        },
+        {
+          src: 'https://img.shields.io/badge/Steam-gray?logo=steam&logoColor=blue',
+          alt: 'Tag : Steam',
+        },
+        {
+          src: 'https://img.shields.io/badge/Guitar-gray?logo=guitarpro&logoColor=green',
+          alt: 'Tag : Guitar',
+        },
+        {
+          src: 'https://img.shields.io/badge/Steam-gray?logo=steam&logoColor=blue',
+          alt: 'Tag : Steam',
+        }
+    ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Colorful Image',
+      src: '~/assets/images/Profile.jpg',
+      alt: 'Profile',
       loading: 'eager',
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
       <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
+        Welcome! I'm a <b>Programmer</b> who wanna develop some intersting game with touching story.
       </p>
       <br />
       <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
+        <img src="https://img.shields.io/badge/VisualStudio-Code-blue">
       </p>
       <br />
       <p>If you're curious to dive deeper into my work, you can follow me:</p>
@@ -94,7 +111,7 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </ProfileContent>
 
   <!-- Steps Widget ****************** -->
 
