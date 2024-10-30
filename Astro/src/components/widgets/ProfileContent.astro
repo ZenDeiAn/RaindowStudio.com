@@ -44,14 +44,14 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
       subtitle={subtitle}
       tagline={tagline}
       classes={{
-        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
+        container: 'max-w-xl sm:mx-auto lg:max-w-1xl',
         title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
         subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
       }}
     />
 
-    <div class="mx-auto max-w-7xl p-4 md:px-8">
-      <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+    <div class="mx-auto max-w-7xl p-4 md:px-1">
+      <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-8`}>
         <div aria-hidden="true" class="profileContainer">
             {
               halfTagImagesA && (
@@ -59,7 +59,7 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
                   {
                   halfTagImagesA.map((img, index) => (
                   <Image
-                    class="tagImagePartA"
+                    class="tagImagePartA shadow-lg"
                     src={img.src}
                     alt={img.alt}
                     style={`--index: ${index}; --length: ${halfTagImagesA.length};`}
@@ -96,7 +96,7 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
                   {
                     halfTagImagesB.map((img, index) => (
                       <Image
-                        class="tagImagePartB"
+                        class="tagImagePartB shadow-lg"
                         src={img.src}
                         alt={img.alt}
                         style={`--index: ${index}; --length: ${halfTagImagesB.length}`}
@@ -150,7 +150,8 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap:10px;
+      column-gap:10px;
+      row-gap: 30px;
       padding: 20px;
     }
 
@@ -160,8 +161,8 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
 
     .tagImagePartA, .tagImagePartB {
       align-items: center;
-      max-height: 20px; /* Set fixed height to constrain height */
-      max-width: 50px; /* Set fixed height to constrain height */
+      max-height: 50px; /* Set fixed height to constrain height */
+      max-width: 150px; /* Set fixed height to constrain height */
       object-fit: contain; /* Ensures the image fills the set dimensions if needed */
       flex-direction: row; /* Only applies if .tagImagePartA/B are within a flex container */
       animation: floating 5s ease-in-out infinite;
