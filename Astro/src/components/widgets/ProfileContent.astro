@@ -58,8 +58,8 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
                 <div class="profileTag">
                   {
                   halfTagImagesA.map((img, index) => (
-                  <Image
-                    class="tagImagePartA shadow-lg"
+                  <img
+                    class="tagImagePartA shadow-lg aspect-auto"
                     src={img.src}
                     alt={img.alt}
                     style={`--index: ${index}; --length: ${halfTagImagesA.length};`}
@@ -95,7 +95,7 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
                 <div class="profileTag">
                   {
                     halfTagImagesB.map((img, index) => (
-                      <Image
+                      <img
                         class="tagImagePartB shadow-lg"
                         src={img.src}
                         alt={img.alt}
@@ -141,7 +141,7 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
   <style>
     .profileContainer {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
     }
 
     .profileTag, .profileImage{
@@ -156,7 +156,7 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
     }
 
     .profileImage {
-      flex: 1 1 60%;
+      flex: 1 1 70%;
     }
 
     .tagImagePartA, .tagImagePartB {

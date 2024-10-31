@@ -11,6 +11,8 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
+
 
 const metadata = {
   title: 'About Me',
@@ -100,28 +102,79 @@ const metadata = {
       <br />
       <b>Tools & Skills: </b>
       <p style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center;">
-        <img src="https://img.shields.io/badge/JetBrains-rider-red?logo=rider">
-        <img src="https://img.shields.io/badge/VisualStudio-Code-blue">
-        <img src="https://img.shields.io/badge/VisualStudio-2020-purple">
-        <img src="https://img.shields.io/badge/Unity-gray?logo=unity">
-        <img src="https://img.shields.io/badge/Photoshop-gray?logo=adobephotoshop">
-        <img src="https://img.shields.io/badge/C%23-white?logo=sharp&logoColor=gray">
-        <img src="https://img.shields.io/badge/C%2B%2B-white?logo=cplusplus&logoColor=gray">
-        <img src="https://img.shields.io/badge/Photon-white?logo=photon&logoColor=gray">
+        <img
+          src="https://img.shields.io/badge/JetBrains-Rider-red?logo=rider"
+          alt="JetBrains Rider"
+        />
+        <img
+          src="https://img.shields.io/badge/VisualStudio-Code-blue"
+          alt="VisualStudio Code"
+        />
+        <img
+          src="https://img.shields.io/badge/VisualStudio-2022-purple"
+          alt="VisualStudio 2022"
+        />
+        <img
+          src="https://img.shields.io/badge/Unity-gray?logo=unity"
+          alt="Unity"
+        />
+        <img
+          src="https://img.shields.io/badge/Photoshop-gray?logo=adobephotoshop"
+          alt="Photoshop"
+        />
+        <img
+          src="https://img.shields.io/badge/C%23-white?logo=sharp&logoColor=gray"
+          alt="C#r"
+        />
+        <img
+          src="https://img.shields.io/badge/C%2B%2B-white?logo=cplusplus&logoColor=gray"
+          alt="C++"
+        />
+        <img
+          src="https://img.shields.io/badge/Photon-white?logo=photon&logoColor=gray"
+          alt="Photon"
+        />
       </p>
 
       <br />
       <b>Learning: </b>
       <p style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center;">
-        <img src="https://img.shields.io/badge/DirectX-black">
-        <img src="https://img.shields.io/badge/ShaderLab-gray">
-        <img src="https://img.shields.io/badge/Unreal_5-gray?logo=unrealengine">
-        <img src="https://img.shields.io/badge/GoDot-white?logo=godotengine&logoColor=gray">
-        <img src="https://img.shields.io/badge/Blender-gray?logo=blender">
-        <img src="https://img.shields.io/badge/Html-white?logo=html5&logoColor=gray">
-        <img src="https://img.shields.io/badge/CSS-white?logo=css3&logoColor=gray">
-        <img src="https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=gray">
-        <img src="https://img.shields.io/badge/Astro-white?logo=astro&logoColor=gray">
+        <img
+          src="https://img.shields.io/badge/DirectX-black"
+          alt="DirectX"
+        />
+        <img
+          src="https://img.shields.io/badge/ShaderLab-gray"
+          alt="ShaderLab"
+        />
+        <img
+          src="https://img.shields.io/badge/Unreal_5-gray?logo=unrealengine"
+          alt="Unreal5"
+        />
+        <img
+          src="https://img.shields.io/badge/GoDot-gray?logo=godotengine&logoColor=blue"
+          alt="GoDot"
+        />
+        <img
+          src="https://img.shields.io/badge/Blender-gray?logo=blender"
+          alt="Blender"
+        />
+        <img
+          src="https://img.shields.io/badge/Html-white?logo=html5&logoColor=gray"
+          alt="Html"
+        />
+        <img
+          src="https://img.shields.io/badge/CSS-white?logo=css3&logoColor=gray"
+          alt="CSS"
+        />
+        <img
+          src="https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=gray"
+          alt="JavaScript"
+        />
+        <img
+          src="https://img.shields.io/badge/Astro-white?logo=astro&logoColor=gray"
+          alt="Astro"
+        />
       </p>
       <br />
     </Fragment>
@@ -140,13 +193,16 @@ const metadata = {
       {
         title:
           'Contents Programmer <br /> <span class="font-normal"><a href="http://www.airpass.co.kr/ko/" target="_blank" rel="noopener noreferrer">Airpass, Hanam, Korea</a></span> <br /> <span class="text-sm font-normal">2021 / 08 - 2024 / 09</span>',
-        description: `- Collaborate with game development team member to develop mini-game by Unity Engine and also Unreal Engine.<br />- Creating framework for Unity development and manage git repository.<br />- Also test the sensor sdk or packaging one from other collaborating company for other team member.<br />Not only programming but also sometimes use Photoshop to design UI in game.`,
+        description: `- Collaborate with game development team member to develop mini-game by Unity Engine and also Unreal Engine.<br />
+          - Creating framework for Unity development and manage git repository.<br />
+          - Test the sensor sdk or packaging one from other collaborating company for other team member.<br />
+          - Sometimes design game UI.`,
         icon: 'tabler:briefcase',
       },
       {
         title:
           'Graduate and Self-Study<br /> <span class="text-sm font-normal">2019 / 10 - 2021 / 07</span>',
-        description: `Study more game development at SNS Game Academy in Korea for 10 mounth and have some Part-time jobs for nearly one year.`,
+        description: `Have some part-time jobs and self-study`,
         icon: 'tabler:address-book',
       },
     ]}
