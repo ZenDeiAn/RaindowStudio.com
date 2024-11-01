@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
 
+import astroI18next from "astro-i18next";
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
@@ -25,6 +26,7 @@ export default defineConfig({
   output: 'static',
 
   integrations: [
+    astroI18next(),
     tailwind({
       applyBaseStyles: false,
     }),

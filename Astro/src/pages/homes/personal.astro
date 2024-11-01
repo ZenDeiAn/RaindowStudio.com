@@ -1,21 +1,17 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
+import Header from "~/components/widgets/Header.astro";
+import Content from "~/components/widgets/Content.astro";
+import ProfileContent from "~/components/widgets/ProfileContent.astro";
+import Features3 from "~/components/widgets/Features3.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import { t, changeLanguage } from "i18next";
 
-import Header from '~/components/widgets/Header.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import ProfileContent from '~/components/widgets/ProfileContent.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
-import Image from '~/components/common/Image.astro';
-
+changeLanguage("en");
 
 const metadata = {
-  title: 'About Me',
+    title: "About Me",
 };
 ---
 
@@ -24,12 +20,12 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Home', href: '#' },
-        { text: 'About', href: '#about' },
-        { text: 'Resume', href: '#resume' },
-        { text: 'Portfolio', href: '#portfolio' },
-        { text: 'Blog', href: '#blog' },
-        { text: 'Github',href: 'https://github.com/ZenDeiAn', },
+        { text: t("personal.header.home"), href: '#' },
+        { text: t("personal.header.about"), href: '#about' },
+        { text: t("personal.header.resume"), href: '#resume' },
+        { text: t("personal.header.portfolio"), href: '#portfolio' },
+        { text: t("personal.header.blog"), href: '#blog' },
+        { text: t("personal.header.github"), href: 'https://github.com/ZenDeiAn' },
       ]}
       actions={[
         {
@@ -39,6 +35,7 @@ const metadata = {
       ]}
       isSticky
       showToggleTheme
+      showLanguage
     />
   </Fragment>
 

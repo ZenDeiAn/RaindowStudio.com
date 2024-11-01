@@ -1,4 +1,5 @@
 import { I18N } from 'astrowind:config';
+// src/utils/getCurrentLang.ts
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',

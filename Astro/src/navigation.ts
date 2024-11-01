@@ -1,4 +1,5 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { localizePath } from "astro-i18next";
 
 export const headerData = {
   links: [
@@ -91,7 +92,7 @@ export const headerData = {
     },
     {
       text: 'About Me',
-      href: getPermalink('/homes/personal')
+      href: localizePath("/homes/personal")
     },
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],

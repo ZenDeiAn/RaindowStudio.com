@@ -1,0 +1,39 @@
+{
+    "index":
+    {
+        "header":
+        {
+            "blog":
+            {
+                "title": "博客",
+                "list": "博客列表",
+                "article": "文章",
+                "category": "分类",
+                "tag": "标签"
+            },
+            "aboutme":"关于"
+        },
+        "hero":
+        {
+            "title": "即便<0>大雨</0>从云层倾盆而落<1>雨云之上的<2>彩虹</2>依旧清晰",
+            "subtitle": "来自<0>ZenDeiAn</0>所定义的生活"
+        },
+        "note":
+        {
+            "title":"格言：",
+            "content":"<0>黑夜</0>给了我黑色的眼睛，我却用它来寻找<0>光明</0> - 顾成"
+        }
+    },
+    "personal":
+    {
+        "header":
+        {
+            "home":"标题",
+            "about":"关于我",
+            "resume":"履历",
+            "portfolio":"作品",
+            "blog":"博客",
+            "github":"GitHub"
+        }
+    }
+}

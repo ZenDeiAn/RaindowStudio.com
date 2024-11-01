@@ -1,0 +1,39 @@
+{
+    "index":
+    {
+        "header":
+        {
+            "blog":
+            {
+                "title": "블로그",
+                "list": "블로그 리스트",
+                "article": "문장",
+                "category": "카테고리",
+                "tag": "태그"
+            },
+            "aboutme":"마이페이지"
+        },
+        "hero":
+        {
+            "title": "하늘에 <0>비</0>가 오더라도 <1><2>무지개</2>는 여전히 구름 위에 있는다",
+            "subtitle": "삶에 정의 by <0>ZenDeiAn</0>"
+        },
+        "note":
+        {
+            "title":"격언:",
+            "content":"<0>어두운</0> 밤은 나에게 검은 눈동자를 주었지만 나는 이 눈으로 <0>밝은</0> 빛을 찾는다 - 구청"
+        }
+    },
+    "personal":
+    {
+        "header":
+        {
+            "home":"홈",
+            "about":"소개",
+            "resume":"이력",
+            "portfolio":"포트폴리오",
+            "blog":"블로그",
+            "github":"GitHub"
+        }
+    }
+}
