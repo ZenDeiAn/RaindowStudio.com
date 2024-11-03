@@ -1,0 +1,130 @@
+{
+    "ui":
+    {
+        "button":
+        {
+            "detail":"detail"
+        },
+        "text":
+        {
+            "role":"Role",
+            "description":"Description"
+        }
+    },
+    "index":
+    {
+        "header":
+        {
+            "blog":
+            {
+                "title": "Blog",
+                "list": "Blog List",
+                "article": "Article",
+                "category": "Category Page",
+                "tag": "Tag Page"
+            },
+            "aboutme":"About Me"
+        },
+        "hero":
+        {
+            "title": "Even the sky is <0>raining</0> though<1>Rainbow over the cloud still <2>visible</2>",
+            "subtitle": "A Life Style Defined by <0>ZenDeiAn</0>"
+        },
+        "note":
+        {
+            "title":"Philosophy:",
+            "content":"Even night brings me <0>Dark</0> eyes, I still looking for <0>Bright</0> - CHENG GU"
+        }
+    },
+    "personal":
+    {
+        "header":
+        {
+            "home":"Home",
+            "about":"About",
+            "resume":"Resume",
+            "portfolio":"Portfolio",
+            "blog":"Blog",
+            "github":"GitHub"
+        },
+        "profile_content":
+        {
+            "title":"About Me",
+            "description":"Hello! I'm a <0>Programmer</0> who wanna develop some interesting game with touching story.<1>And always studying new design pattern and algorithm.&#128516;<1>Currently I'm working on my indie project, it'll be update to the blog page later soon.",
+            "inline_subtitle_skill":"Tools & Skills",
+            "inline_subtitle_learning":"Currently Learning"
+        },
+        "work_experience":
+        {
+            "title":"Work Experience",
+            "airpass":
+            {
+                "title":"Contents Programmer <br /> <span class=\"font-normal\"><a href=\"http://www.airpass.co.kr/ko/\" target=\"_blank\" rel=\"noopener noreferrer\">Airpass, Hanam, Korea</a></span> <br /> <span class=\"text-sm font-normal\">2021 / 08 - 2024 / 09</span>",
+                "description":"- Collaborate with game development team member to develop mini-game by Unity Engine and also Unreal Engine.<br />- Creating framework for Unity development and manage git repository.<br />- Test the sensor sdk or packaging one from other collaborating company for other team member.<br />- Sometimes design game UI."
+            },
+            "self_study":
+            {
+                "title":"Graduate and Self-Study<br /> <span class=\"text-sm font-normal\">2019 / 10 - 2021 / 07</span>",
+                "description":"Have some part-time jobs and self study."
+            }
+        },
+        "education":
+        {
+            "title":"Education",
+            "self_study":"Self-Study<br /><span class=\"font-normal\">SBS Game Academy .Korea</span> <br /> <span class=\"text-sm font-normal\">2020 - 2021</span>",
+            "jai":"JiLin Animation Institute .China<br /> <span class=\"font-normal\"></span>Bachelor of Digital Media Technology<br /> <span class=\"text-sm font-normal\">2015 - 2019</span>"
+        },
+        "skills":
+        {
+            "title":"Skills",
+            "subtitle":"Revel is the key of life.",
+            "game_programming":
+            {
+                "title":"Game Programming",
+                "description":"Familiar with Unity Engine and Photon - Fusion SDK. Have some experience of Unreal Engine 4 and 5."
+            },
+            "communication":
+            {
+                "title":"Localization",
+                "description":"Ability for Chinese simplify locolization."
+            },
+            "online_game_solution":
+            {
+                "title":"Online Game Solution",
+                "description":"Using <b>Photon-Fusion</b>, <b>Mirror</b>, <b>FishNet</b> SDK for developing online game for Unity."
+            },
+            "unity_framework":
+            {
+                "title":"Unity Framework Generation",
+                "description":"Develop some tools for game development in Unity by <b>Unity Editor Script</b> and <b>C# native library Dll</b>."
+            },
+            "optimization":
+            {
+                "title":"Optimization",
+                "description":"Optimize & Refactor the code and resources in Unity for better performance."
+            },
+            "ui_design":
+            {
+                "title":"Game UI Design",
+                "description":"Design game UI by <b>Photoshop</b>."
+            }
+        },
+        "portfolio":
+        {
+            "title":"Portfolio",
+            "subtitle":"Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives.",
+            "donutcrush":
+            {
+                "description":"A cartoon style multi-player mini game developed by Unity and Photon Fusion SDK.",
+                "role":"Game logic and process programming.<br>Scenario and animations for UI.<br>Http web request(Restful API) for ranking data.<br>Online and Local multi-play game logi programming.<br>Sensor communication code.<br>UI Design for button and title.",
+                "main_description":"<0>DonutCrush:<1><2>Project developed while working at Airpass.</2></0>"
+            },
+            "raindowstudio_framework":
+            {
+                "description":"Unity develop framework.",
+                "role":"C# native library developer, Unity script & editor script developer.",
+                "main_description":"<0>RaindowStudio Framework:<1><2>Develop framework for personal Unity development.</2></0>"
+            }
+        }
+    }
+}

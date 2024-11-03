@@ -7,6 +7,8 @@ import Features3 from "~/components/widgets/Features3.astro";
 import Steps from "~/components/widgets/Steps.astro";
 import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 import { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
 
 changeLanguage("zh");
 
@@ -19,6 +21,7 @@ const metadata = {
   <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
+      logoLink={localizePath('')}
       links={[
         { text: t("personal.header.home"), href: '#' },
         { text: t("personal.header.about"), href: '#about' },
@@ -54,13 +57,20 @@ const metadata = {
           alt: 'Tag : Steam',
         },
         {
-
           src: 'https://img.shields.io/badge/Guitar-black?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC%2FxhBQAACklpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAAEiJnVN3WJP3Fj7f92UPVkLY8LGXbIEAIiOsCMgQWaIQkgBhhBASQMWFiApWFBURnEhVxILVCkidiOKgKLhnQYqIWotVXDjuH9yntX167%2B3t%2B9f7vOec5%2FzOec8PgBESJpHmomoAOVKFPDrYH49PSMTJvYACFUjgBCAQ5svCZwXFAADwA3l4fnSwP%2FwBr28AAgBw1S4kEsfh%2F4O6UCZXACCRAOAiEucLAZBSAMguVMgUAMgYALBTs2QKAJQAAGx5fEIiAKoNAOz0ST4FANipk9wXANiiHKkIAI0BAJkoRyQCQLsAYFWBUiwCwMIAoKxAIi4EwK4BgFm2MkcCgL0FAHaOWJAPQGAAgJlCLMwAIDgCAEMeE80DIEwDoDDSv%2BCpX3CFuEgBAMDLlc2XS9IzFLiV0Bp38vDg4iHiwmyxQmEXKRBmCeQinJebIxNI5wNMzgwAABr50cH%2BOD%2BQ5%2Bbk4eZm52zv9MWi%2FmvwbyI%2BIfHf%2FryMAgQAEE7P79pf5eXWA3DHAbB1v2upWwDaVgBo3%2FldM9sJoFoK0Hr5i3k4%2FEAenqFQyDwdHAoLC%2B0lYqG9MOOLPv8z4W%2Fgi372%2FEAe%2Ftt68ABxmkCZrcCjg%2F1xYW52rlKO58sEQjFu9%2Bcj%2FseFf%2F2OKdHiNLFcLBWK8ViJuFAiTcd5uVKRRCHJleIS6X8y8R%2BW%2FQmTdw0ArIZPwE62B7XLbMB%2B7gECiw5Y0nYAQH7zLYwaC5EAEGc0Mnn3AACTv%2FmPQCsBAM2XpOMAALzoGFyolBdMxggAAESggSqwQQcMwRSswA6cwR28wBcCYQZEQAwkwDwQQgbkgBwKoRiWQRlUwDrYBLWwAxqgEZrhELTBMTgN5%2BASXIHrcBcGYBiewhi8hgkEQcgIE2EhOogRYo7YIs4IF5mOBCJhSDSSgKQg6YgUUSLFyHKkAqlCapFdSCPyLXIUOY1cQPqQ28ggMor8irxHMZSBslED1AJ1QLmoHxqKxqBz0XQ0D12AlqJr0Rq0Hj2AtqKn0UvodXQAfYqOY4DRMQ5mjNlhXIyHRWCJWBomxxZj5Vg1Vo81Yx1YN3YVG8CeYe8IJAKLgBPsCF6EEMJsgpCQR1hMWEOoJewjtBK6CFcJg4Qxwicik6hPtCV6EvnEeGI6sZBYRqwm7iEeIZ4lXicOE1%2BTSCQOyZLkTgohJZAySQtJa0jbSC2kU6Q%2B0hBpnEwm65Btyd7kCLKArCCXkbeQD5BPkvvJw%2BS3FDrFiOJMCaIkUqSUEko1ZT%2FlBKWfMkKZoKpRzame1AiqiDqfWkltoHZQL1OHqRM0dZolzZsWQ8ukLaPV0JppZ2n3aC%2FpdLoJ3YMeRZfQl9Jr6Afp5%2BmD9HcMDYYNg8dIYigZaxl7GacYtxkvmUymBdOXmchUMNcyG5lnmA%2BYb1VYKvYqfBWRyhKVOpVWlX6V56pUVXNVP9V5qgtUq1UPq15WfaZGVbNQ46kJ1Bar1akdVbupNq7OUndSj1DPUV%2Bjvl%2F9gvpjDbKGhUaghkijVGO3xhmNIRbGMmXxWELWclYD6yxrmE1iW7L57Ex2Bfsbdi97TFNDc6pmrGaRZp3mcc0BDsax4PA52ZxKziHODc57LQMtPy2x1mqtZq1%2BrTfaetq%2B2mLtcu0W7eva73VwnUCdLJ31Om0693UJuja6UbqFutt1z%2Bo%2B02PreekJ9cr1Dund0Uf1bfSj9Rfq79bv0R83MDQINpAZbDE4Y%2FDMkGPoa5hpuNHwhOGoEctoupHEaKPRSaMnuCbuh2fjNXgXPmasbxxirDTeZdxrPGFiaTLbpMSkxeS%2BKc2Ua5pmutG003TMzMgs3KzYrMnsjjnVnGueYb7ZvNv8jYWlRZzFSos2i8eW2pZ8ywWWTZb3rJhWPlZ5VvVW16xJ1lzrLOtt1ldsUBtXmwybOpvLtqitm63Edptt3xTiFI8p0in1U27aMez87ArsmuwG7Tn2YfYl9m32zx3MHBId1jt0O3xydHXMdmxwvOuk4TTDqcSpw%2BlXZxtnoXOd8zUXpkuQyxKXdpcXU22niqdun3rLleUa7rrStdP1o5u7m9yt2W3U3cw9xX2r%2B00umxvJXcM970H08PdY4nHM452nm6fC85DnL152Xlle%2B70eT7OcJp7WMG3I28Rb4L3Le2A6Pj1l%2Bs7pAz7GPgKfep%2BHvqa%2BIt89viN%2B1n6Zfgf8nvs7%2Bsv9j%2Fi%2F4XnyFvFOBWABwQHlAb2BGoGzA2sDHwSZBKUHNQWNBbsGLww%2BFUIMCQ1ZH3KTb8AX8hv5YzPcZyya0RXKCJ0VWhv6MMwmTB7WEY6GzwjfEH5vpvlM6cy2CIjgR2yIuB9pGZkX%2BX0UKSoyqi7qUbRTdHF09yzWrORZ%2B2e9jvGPqYy5O9tqtnJ2Z6xqbFJsY%2BybuIC4qriBeIf4RfGXEnQTJAntieTE2MQ9ieNzAudsmjOc5JpUlnRjruXcorkX5unOy553PFk1WZB8OIWYEpeyP%2BWDIEJQLxhP5aduTR0T8oSbhU9FvqKNolGxt7hKPJLmnVaV9jjdO31D%2BmiGT0Z1xjMJT1IreZEZkrkj801WRNberM%2FZcdktOZSclJyjUg1plrQr1zC3KLdPZisrkw3keeZtyhuTh8r35CP5c%2FPbFWyFTNGjtFKuUA4WTC%2BoK3hbGFt4uEi9SFrUM99m%2Fur5IwuCFny9kLBQuLCz2Lh4WfHgIr9FuxYji1MXdy4xXVK6ZHhp8NJ9y2jLspb9UOJYUlXyannc8o5Sg9KlpUMrglc0lamUycturvRauWMVYZVkVe9ql9VbVn8qF5VfrHCsqK74sEa45uJXTl%2FVfPV5bdra3kq3yu3rSOuk626s91m%2Fr0q9akHV0IbwDa0b8Y3lG19tSt50oXpq9Y7NtM3KzQM1YTXtW8y2rNvyoTaj9nqdf13LVv2tq7e%2B2Sba1r%2Fdd3vzDoMdFTve75TsvLUreFdrvUV99W7S7oLdjxpiG7q%2F5n7duEd3T8Wej3ulewf2Re%2FranRvbNyvv7%2ByCW1SNo0eSDpw5ZuAb9qb7Zp3tXBaKg7CQeXBJ9%2BmfHvjUOihzsPcw83fmX%2B39QjrSHkr0jq%2Fdawto22gPaG97%2BiMo50dXh1Hvrf%2Ffu8x42N1xzWPV56gnSg98fnkgpPjp2Snnp1OPz3Umdx590z8mWtdUV29Z0PPnj8XdO5Mt1%2F3yfPe549d8Lxw9CL3Ytslt0utPa49R35w%2FeFIr1tv62X3y%2B1XPK509E3rO9Hv03%2F6asDVc9f41y5dn3m978bsG7duJt0cuCW69fh29u0XdwruTNxdeo94r%2Fy%2B2v3qB%2FoP6n%2B0%2FrFlwG3g%2BGDAYM%2FDWQ%2FvDgmHnv6U%2F9OH4dJHzEfVI0YjjY%2BdHx8bDRq98mTOk%2BGnsqcTz8p%2BVv9563Or59%2F94vtLz1j82PAL%2BYvPv655qfNy76uprzrHI8cfvM55PfGm%2FK3O233vuO%2B638e9H5ko%2FED%2BUPPR%2BmPHp9BP9z7nfP78L%2FeE8%2FstRzjPAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAaNSURBVHic1dt7rB1VFcDhr7WAER%2BkKakaoy1aLcgjQKmK8dUo9IVgIEq1KimiUYM2tb7QtIixFa8oiEETNaiIUIjxbRXiIzFqicItia2kPFJsRW9LFYhiuVqvf6xzeuaezjkzs2fmor%2Fk5MyZ2Xvtvdbs2XvtNetMm5iYcO7oag0zDc%2FF8ZiHuXgWZuMoPBlPxAxMxwQew8Odzx7sxk7swO873wea7OS3Tr7SjIZkTcdCLMLpWCCUrcJTMGvI9b%2Fid%2FgNfoZf49%2BVe9pHHQNMw1l4AxZjZt3OFDATZ3Q%2B6%2FEIbsEmfEeiMaYn1HkSLsVD%2BC7eqH3l83gqzsPNnb5sFKOoElUNcLGw%2FPpOB%2F5XOBIfEn1bW6ViWQM8A1vxOTyhSgOPAyPYjmeXKVzGAK%2FGn3BSjU5NNcfifiwrKlhkgPNxq5jw%2Fh%2F5Ad4yrMAwA5yDG5rszRC24goxmTXN1%2FD6QRcHGeAkfLuFzuQxKnyItXhf37X78Vb8pGYbm3Ba3oVBBvhmzQbLMooX4V%2Bd3%2FMz1%2FbiZfi68DN%2BWLOt6%2BX4PXkGGMFxNRsrw50mKz9DrOuE8guwK1N%2BuXpGmIdP95%2FsN8AJKq6jNbhYT3nCkzsP27AEf8ypsxw%2FqtHme3FK9kS%2FAaZKeeLuw4dxQef4DpyI24fUW4bNNdqdpGPWAHPx5hqCy3AHDhd34TKMYwOuFasO%2FKeEnKXSjbACz%2B%2F%2ByBpgpXbX%2B1G8WAz7UbHFPaxz7YBwtvp5AY4eIG8pfpzYl5Xdg6wBlicKK0P%2FbH%2BB3rK0B3Pw2746q3AXthh8Y5aI7XFVDuraNcB8sRa3wX16d77LFnHXJ8Rsv7uvzkX4Suf4aBFEGcRoQp9OxgvpGWBBgpCy7BLPOhzTafMu4WydYvJS1%2BWizPH5%2BNsQ%2BYsS%2B7WQngFOTBQyjNuFZzdfOFZX4V6xFBHL3dYBdT%2BDu8WMP2zZW2iy81SFE%2Bh5Rs9JFDKIUbxEDPsd%2BH7m2jvw2YL6N3Y%2BRSxO6l0wh94IeHoNQf1kZ3t4eebaHrwmp87bsF8sUVWoY4DZ9AwwaKmpyp1C%2BfHMuVd2vvPcW7gQX8IRYuNTlueJUZbKHHoGGB9crhLrc2SdJYKXZztU%2BXn4cub3VRXaOrNy7yazn54BxmoK63JG5%2FsyrMvIPlP%2Ber1LxP6JNb2Kd7ckoX9ZdtKbBP9cU1iXd4klrOvh7cUXhpTfL2bjI7CvQjuz9B6tVMbojYC7awrL0lX%2Bn%2FI3NSvEo9INrv5dNeWJOOWRSb3rsYPeCNhaU1g%2FYzjVof79Kj0Pby%2BuSZRfd%2FjT0bk7Am7Dow0IZbDyK%2FSUhz8kyj9cjIA6jAudDxrgQfy8plBiKJ8mf2f3tMzxshrtvQLPTKzb5Rc68142RnaTEnH0Akbk%2B%2FbwRfHmdzd%2BWaONJob%2Fzd2D7Hb4RofuyqqyveD6DeopT%2F31f0wm6Js1wDiurin8npr1izhV%2FYDt52Xmu%2F6Y4BVi%2F57CPvmBzCap4%2FsTj%2BdI9kS%2FAQ7gkkThO%2FGPxLplqfv8XyIyUQ6S915gk7T4e9vDfy5eWqP%2BrfhG%2F8lBb4Y%2BmNBAk95kHnUnv1ydBhlgGz5esYHUCG1Z6gz%2Fyw2IHQ57O7xOxO7K8Dr8qmKnqjATr0qsey8%2BMuhiUX7AmhINnC2SlNpkhYT8nw5rDEmvKzLAZpP99yyPiojM99L6VYqjcJ1Yu1O4TkH%2FyqTIrMFf%2Bs5tEzk4W9L6Vcg0fEyEw1cWlB3Eg1hdVKiMAR7RC2UTiRPHq76HL8sqkSmyrqBcEatFcuVQyiZK3iSClw%2BJxMg2WCTig3MbkLVJJEQUUiVT9LUaztXtcKxQ%2FPSG5O3Du8sWrpIo%2BZgGcnMzzBJ3arvmlCeUL%2F14pqTKNsH7RUhsYPZWItcKo5bm8TDA5fhUC3LvwzurVppqA3wSH2hJ9oX6dnplmEoDbJS2ySrDpSLOV5mpMsBGkc3dBj8VTlMSU2GANpV%2FWEEucBFtG6BN5YmstgfqCGjTABu0q%2FwnTE68SKItA2wQCZBtcQs%2B2oSgpv41lmVEuxmnD2hwP9L0CJgtXpG3ybka%2FF9B0wYYU2EjksDbNRyDaGMO%2BKp4wdI0V4tcokZpaxJcK%2F5T2BSb8Z4G5R2kzWXwHPX%2F6kK8Rl%2FagJxc2naEFitOihzGNdJTYUsxFa7wGpETfFuFOt3s8jYnVLTjB%2BTRzR49Dm8SEaBjRNj7MOHT3yNS6a4XCZdTwn8BSDI7Q8kdU4sAAAAASUVORK5CYII%3D',
           alt: 'Tag : Guitar',
         },
         {
           src: 'https://img.shields.io/badge/Fitness-%23fae766?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC%2FxhBQAACklpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAAEiJnVN3WJP3Fj7f92UPVkLY8LGXbIEAIiOsCMgQWaIQkgBhhBASQMWFiApWFBURnEhVxILVCkidiOKgKLhnQYqIWotVXDjuH9yntX167%2B3t%2B9f7vOec5%2FzOec8PgBESJpHmomoAOVKFPDrYH49PSMTJvYACFUjgBCAQ5svCZwXFAADwA3l4fnSwP%2FwBr28AAgBw1S4kEsfh%2F4O6UCZXACCRAOAiEucLAZBSAMguVMgUAMgYALBTs2QKAJQAAGx5fEIiAKoNAOz0ST4FANipk9wXANiiHKkIAI0BAJkoRyQCQLsAYFWBUiwCwMIAoKxAIi4EwK4BgFm2MkcCgL0FAHaOWJAPQGAAgJlCLMwAIDgCAEMeE80DIEwDoDDSv%2BCpX3CFuEgBAMDLlc2XS9IzFLiV0Bp38vDg4iHiwmyxQmEXKRBmCeQinJebIxNI5wNMzgwAABr50cH%2BOD%2BQ5%2Bbk4eZm52zv9MWi%2FmvwbyI%2BIfHf%2FryMAgQAEE7P79pf5eXWA3DHAbB1v2upWwDaVgBo3%2FldM9sJoFoK0Hr5i3k4%2FEAenqFQyDwdHAoLC%2B0lYqG9MOOLPv8z4W%2Fgi372%2FEAe%2Ftt68ABxmkCZrcCjg%2F1xYW52rlKO58sEQjFu9%2Bcj%2FseFf%2F2OKdHiNLFcLBWK8ViJuFAiTcd5uVKRRCHJleIS6X8y8R%2BW%2FQmTdw0ArIZPwE62B7XLbMB%2B7gECiw5Y0nYAQH7zLYwaC5EAEGc0Mnn3AACTv%2FmPQCsBAM2XpOMAALzoGFyolBdMxggAAESggSqwQQcMwRSswA6cwR28wBcCYQZEQAwkwDwQQgbkgBwKoRiWQRlUwDrYBLWwAxqgEZrhELTBMTgN5%2BASXIHrcBcGYBiewhi8hgkEQcgIE2EhOogRYo7YIs4IF5mOBCJhSDSSgKQg6YgUUSLFyHKkAqlCapFdSCPyLXIUOY1cQPqQ28ggMor8irxHMZSBslED1AJ1QLmoHxqKxqBz0XQ0D12AlqJr0Rq0Hj2AtqKn0UvodXQAfYqOY4DRMQ5mjNlhXIyHRWCJWBomxxZj5Vg1Vo81Yx1YN3YVG8CeYe8IJAKLgBPsCF6EEMJsgpCQR1hMWEOoJewjtBK6CFcJg4Qxwicik6hPtCV6EvnEeGI6sZBYRqwm7iEeIZ4lXicOE1%2BTSCQOyZLkTgohJZAySQtJa0jbSC2kU6Q%2B0hBpnEwm65Btyd7kCLKArCCXkbeQD5BPkvvJw%2BS3FDrFiOJMCaIkUqSUEko1ZT%2FlBKWfMkKZoKpRzame1AiqiDqfWkltoHZQL1OHqRM0dZolzZsWQ8ukLaPV0JppZ2n3aC%2FpdLoJ3YMeRZfQl9Jr6Afp5%2BmD9HcMDYYNg8dIYigZaxl7GacYtxkvmUymBdOXmchUMNcyG5lnmA%2BYb1VYKvYqfBWRyhKVOpVWlX6V56pUVXNVP9V5qgtUq1UPq15WfaZGVbNQ46kJ1Bar1akdVbupNq7OUndSj1DPUV%2Bjvl%2F9gvpjDbKGhUaghkijVGO3xhmNIRbGMmXxWELWclYD6yxrmE1iW7L57Ex2Bfsbdi97TFNDc6pmrGaRZp3mcc0BDsax4PA52ZxKziHODc57LQMtPy2x1mqtZq1%2BrTfaetq%2B2mLtcu0W7eva73VwnUCdLJ31Om0693UJuja6UbqFutt1z%2Bo%2B02PreekJ9cr1Dund0Uf1bfSj9Rfq79bv0R83MDQINpAZbDE4Y%2FDMkGPoa5hpuNHwhOGoEctoupHEaKPRSaMnuCbuh2fjNXgXPmasbxxirDTeZdxrPGFiaTLbpMSkxeS%2BKc2Ua5pmutG003TMzMgs3KzYrMnsjjnVnGueYb7ZvNv8jYWlRZzFSos2i8eW2pZ8ywWWTZb3rJhWPlZ5VvVW16xJ1lzrLOtt1ldsUBtXmwybOpvLtqitm63Edptt3xTiFI8p0in1U27aMez87ArsmuwG7Tn2YfYl9m32zx3MHBId1jt0O3xydHXMdmxwvOuk4TTDqcSpw%2BlXZxtnoXOd8zUXpkuQyxKXdpcXU22niqdun3rLleUa7rrStdP1o5u7m9yt2W3U3cw9xX2r%2B00umxvJXcM970H08PdY4nHM452nm6fC85DnL152Xlle%2B70eT7OcJp7WMG3I28Rb4L3Le2A6Pj1l%2Bs7pAz7GPgKfep%2BHvqa%2BIt89viN%2B1n6Zfgf8nvs7%2Bsv9j%2Fi%2F4XnyFvFOBWABwQHlAb2BGoGzA2sDHwSZBKUHNQWNBbsGLww%2BFUIMCQ1ZH3KTb8AX8hv5YzPcZyya0RXKCJ0VWhv6MMwmTB7WEY6GzwjfEH5vpvlM6cy2CIjgR2yIuB9pGZkX%2BX0UKSoyqi7qUbRTdHF09yzWrORZ%2B2e9jvGPqYy5O9tqtnJ2Z6xqbFJsY%2BybuIC4qriBeIf4RfGXEnQTJAntieTE2MQ9ieNzAudsmjOc5JpUlnRjruXcorkX5unOy553PFk1WZB8OIWYEpeyP%2BWDIEJQLxhP5aduTR0T8oSbhU9FvqKNolGxt7hKPJLmnVaV9jjdO31D%2BmiGT0Z1xjMJT1IreZEZkrkj801WRNberM%2FZcdktOZSclJyjUg1plrQr1zC3KLdPZisrkw3keeZtyhuTh8r35CP5c%2FPbFWyFTNGjtFKuUA4WTC%2BoK3hbGFt4uEi9SFrUM99m%2Fur5IwuCFny9kLBQuLCz2Lh4WfHgIr9FuxYji1MXdy4xXVK6ZHhp8NJ9y2jLspb9UOJYUlXyannc8o5Sg9KlpUMrglc0lamUycturvRauWMVYZVkVe9ql9VbVn8qF5VfrHCsqK74sEa45uJXTl%2FVfPV5bdra3kq3yu3rSOuk626s91m%2Fr0q9akHV0IbwDa0b8Y3lG19tSt50oXpq9Y7NtM3KzQM1YTXtW8y2rNvyoTaj9nqdf13LVv2tq7e%2B2Sba1r%2Fdd3vzDoMdFTve75TsvLUreFdrvUV99W7S7oLdjxpiG7q%2F5n7duEd3T8Wej3ulewf2Re%2FranRvbNyvv7%2ByCW1SNo0eSDpw5ZuAb9qb7Zp3tXBaKg7CQeXBJ9%2BmfHvjUOihzsPcw83fmX%2B39QjrSHkr0jq%2Fdawto22gPaG97%2BiMo50dXh1Hvrf%2Ffu8x42N1xzWPV56gnSg98fnkgpPjp2Snnp1OPz3Umdx590z8mWtdUV29Z0PPnj8XdO5Mt1%2F3yfPe549d8Lxw9CL3Ytslt0utPa49R35w%2FeFIr1tv62X3y%2B1XPK509E3rO9Hv03%2F6asDVc9f41y5dn3m978bsG7duJt0cuCW69fh29u0XdwruTNxdeo94r%2Fy%2B2v3qB%2FoP6n%2B0%2FrFlwG3g%2BGDAYM%2FDWQ%2FvDgmHnv6U%2F9OH4dJHzEfVI0YjjY%2BdHx8bDRq98mTOk%2BGnsqcTz8p%2BVv9563Or59%2F94vtLz1j82PAL%2BYvPv655qfNy76uprzrHI8cfvM55PfGm%2FK3O233vuO%2B638e9H5ko%2FED%2BUPPR%2BmPHp9BP9z7nfP78L%2FeE8%2FstRzjPAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAGtUExURScnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJyYYM%2FAAAACOdFJOUwACAwUGBwgKCwwNDhESExQVFxgZGhsdHiAiJCYnKCksLTM0NTc4OTs8PkBFR0lKTk9QUVVWWFlaXF5gYWJkZWZnbG1ucHN0dXZ%2FgYaHiYqNjo%2BQkpqbnJ2goaOoqausrq%2BwsrO1try%2FwMHCyMrLzM%2FQ0tPU1drb3N3e4eLj5%2Brr7O3u8PLz9Pf4%2Bvv8%2Ff6L3rtdAAACvUlEQVQYGZ3BiUOLYQAG8MeVSuRckbdcLXIfHQjJ0dRGW8m9EqFmZKbJsFVfsqbnb1b2bXvf7Tve%2Bf1gp6ljMBxJpAwjlYiEBzuaUJH2YIwlYsF2aKr3xWkp7quHu7pBg7YMfx1c9M3T0XwfnDRP0dVUM2z1rFLDag9sDFHTECy9oLYXsDDJcivPlmlpEmXGWCbtb8BJWhtDiRBLJe5uw5pBWgtB0c0S7y%2FDNE1r3ZB4qHp9BgVbF2nNg6IZyt4dg8y7QkszKOilbGUDVDFa64WpKkPZW6hqFmgtU4WcABU%2BqD7QTgD%2FVGepaIHiFW1lq7Gun4rvUIzQQT%2FWJal4BNP1z6Mb4KeTJNZ4qboI0xsy%2BZXOvACGqdoO0wO6GwaQoCKCvAG6SwCNVA0g7w41NKKTqjbkXaOGTgSoWNyIvEvUEMA4FS9RcJqK1ze8B450PkxRMY4oFTdR0EpJtA05287fpySKOSoECtr46d7Zo21XR1PkUxRtpmQOacq%2BoWj%2FBeTUhJ5DcpCSNJYoewJ3gpIlLFF2Be4EJUtIU%2BaBO0FJGnOUfIEGQckcopQ8hAZBSRTjlFyGBkHJOAKUnIAGQUkAXZScgAZBSRcaKTkEDYKSRiDBovAeuBMsSgAYpuT3471wI1g0DMBLxeI5uBAs8mJNkqohOBMsSGJdP0t8bIUTwYJ%2BrKvOslRwB%2BwJ5mWr8U%2BAZRYHGmBHMC%2BAnKoMy%2F2ZuHV83xYAm3a2nLn96NPEKZh20ZSpgqmX1rI%2FZ%2BNffiwzJzFy5eju2trawzT1omCGmjKGYfxizgyKPPwPHki6WbFuKEKsUAglxliRMZSZZAUmYSFMbWFYClJTEDZ6VqlhtQe2mqfparoZTvoW6GihDy7q%2FAZtGf46uKv3xWkp7quHpvZgjCViwXZUpKnDH47MpgwjNRsJ%2BzuaYOMvR38ROc0oRtUAAAAASUVORK5CYII%3D',
           alt: 'Tag : Fitness',
+        },
+        {
+          src: 'https://img.shields.io/badge/INFP-%237272FB?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAIUklEQVR4nO2be4xdRR3HP%2Fd2gdoHj8YmLfSlXaBIRUkdpcCW1BQtkIImUMjwKIu8IhHIHmmjlkoUJKGZSBH%2BQGq3gJ0mrYagQbSNkohS3RHQptCltri1LdS4odVCUxfY9Y%2FfnN2zd8%2B997z27pr4TU7uuWdev%2FmdOb%2Ff%2FB5T6uvrYzgROHsaMB84C5gDnAFMAU4CJvpqR4B%2FAQeBXUAnsBPYZpQ%2BMJz0lYaDAYGz8wANXIpMOg86gV8A1ij9cl7aKlEYAwJnJwK3Aa3AJwrpdCheB9qBx43SR4roMDcDAmdPBu4C7gQmFUBTErwDPAKsMUofztNRZgYEzpaAZcBq4KN5iMiBbuAe4EmjdKaJZGJA4GwzsB64IMugw4DfA8uM0nvSNiynbRA4exXwMqNn8iC0vOJpS4XEK8Av%2BdVAkHaQBsMA9yT9JBIxIHD2eET66ny0NQwWaDVK99SrWPcT8JN%2FlvST3wJ8FvhkynZFQAPPetproiYD%2FLJfByzOQEQ74GicaqzEYmCdn0NVNNXp5EHg2gyDLwBe8venZGhfFK4FDgArqlWougICZ6%2Bs1bAOXgRC4fKRjH0UheW1tEMsAwJnPw6szTDYM0CLv%2B%2F1v%2B8AqfVzwXjCz2kIhmgB%2F838Frgww0ATgPdinh9l5FfC74AFleoxbgUsI9vkAWZU%2FA8FUDMjvwouBG6sfDhoBXjDZhcwOeMgC4zSL0YfBM6Gt63A%2FcCpGfsuAv8EzogaUJUr4C6yTx7EyVEN7cinNZKYjMyxH%2F0MCJydgJi0efBh4Oz4GuXtwFs5x8iLO73vAhi8Am4n%2F6ZlBXB%2BjfItiFYYSUxCHDeAZ4CX%2FLcW0HkLMC5w9pKYspDZOwoYJy9uC3eIIVHzgdML6LgMLEU%2BhXMqysYYpWHk1SGIVpoPAwxIbUfXwGXIfmBa9KFR%2Bn1%2FW5QWWAc8kKP9UhhgQBZjpxpOAr4N%2FChwNq7fx1L2dxT4K7AVeAhYAnwGuAM4IQediwFKbR0bpgH7cnRUD0uBnwHjgPeM0j2BszcgS%2FD2mPrfAv4I%2FAMYj0z%2BmL96I%2FWuBDbnpG1GE3Bezk7qYVPkfjWw3Cj9VODspyvq7QA2IszaAeBlRj8im6rJ5J88wPwyUElIHvwGeA74FbLp2Q50RMoPBM6GMYMHI8%2FvRxwn36O%2BliiTzVCLwzllJGRVFPYBVyPf10XAp4DPAbcAbwAPA%2BcFzs5AfBF%2FB240St%2BbYoxJwOUF0XtWGZhZUGcghtR9Mc%2FXGqXnAHcDjwLjjdJvA81G6Sd9neOM0oRXDSwqkN6ZpbaODQco3kBZBHQRsQDDSQXOngp81Si9slYHke89itmInFAF0bm3iYEIbZHoQVxRQ2CUfgvon7x3VHwF%2BLFRemeNPq8BvkBxkweYUGZ4GLCEAZdYPRwDvgm8HjjbETg7N6ZOK%2FLmWwuiL8TEUlvHhuFIEDiK6PBYGKUJnG1CmLSSwXJjD%2FBFf38NoiGGCz1NSHJC0atgHHAycLhGnamIZXhfxfPZwO6C6amGI2kZsBt41V8fQ7ak51ap%2B2fg88CblQVewO3z5SOJd5uAt0muBbYYpe8I%2F3h3cytiSTZX1J2JOCJvRjI8QpwA%2FMffn5aS4E5PL8D0mDHTorsJ2AvMS9igK%2FrHKL0Z2Bw4OwvxJl3FYCtwKrJrewzY5p%2FtR%2BL6h5Ft8lN1xjyIxBna%2Fe%2B7%2FnkzsBD4MrKLnBbbujb2lpFkpCToBWYFzo6rLDBKdxml2xBrrauieCoiyH7trzeAJqN0bx2iu4DngRsQg%2Bp5BiYP8jk%2BgeQhrQJ%2BHjN2PewsI%2Fv1JCgj6u2iakFHo%2FQPgKeRt1YLYfu4XWg38ALQhkxuawLa2pHt8a3%2BvjNBG4DtZQaWZhJMR7g9L3B2TFwFo%2FQqJH9nf5U%2BDiEaAgbLnv3IEl%2BFCMdnUtAVYitwEyKYNfIyXq1R%2Fw%2Blvr4%2BAmc7gTMTDtLnO73aKF1VXQXO3gIsZ6ig%2Bg7ySXwI%2FBQRhD9EIkobE9KQBlMQ2dQCzEVe4ljgTaP0mSEDHqbCX54Au4BFRumqzpTA2bGIBlCImwzgS8BzRukPIvVSDp0Z0xF5cjawxyj9QMiACxCVlQa9wE%2BQt%2FmaF2qxCJxdCNyLqL%2FLI%2F7BsDzl0LlQBsYAE4zSh8L8gJcQqZpGr5aRpXUu8A1kOcfCKP0CIthGA3r9dQgiscHA2a8jLqss6EEE2MVp8%2FUa%2FPZDlEI6o5Ghx%2FFcyYDjkayQvwTOTgmcTZ1%2B12D0v6R%2BQn3u7ZocnR6HSNlXgPO9tVcTI%2Fj2%2B%2F9Uvqk1SAg5c%2BfIzm8rsDJw9sR6SUojgOoJEj5unjUvKIqxSHDkT8ClSVZDo1Dpb4z7VtcjubdF4HTEz789cDYuCJIWCxGNswlxt1vga%2BSwCmMzRQNnZyP5wLUSHtLiGEL0eqN0ux8nSbvrkYnPRXwQcZnpXcDfkK3vRj%2FWEMR5m6umynpbf1NsYT4cRsJdGxGCu2PqXIz4GeYiUaApKfo%2FiESNlhNhRDVXe81c4cDZh5B8%2FOFCJ2KMbQM%2BQIykJYh9n%2FcMQhcSQf5urThDPeG0ArHYsmSLJsEcfxXt7QWYhZjbJWp4qOtmi0eSpYsMoTcCvwSuqJcxXnfH5ju4ApG4%2FyuwJJg8JDwx4ju6DjmMMNphgOuSTB4ynBny2mEtcGJ62oYV%2FwZu9o7axPj%2Foakso3lXWAvif4vT441Ct6ehJcvkobiDk3cjW9JGHpx8FPj%2BiB2crETk6OxNFJt1EsVOZHMzeo7OxsEfnr4eyRnMG77ajeQdPT2qD09XQ%2BT4%2FNmI6z08Pn8KEkV%2BH4n4HPLXLiR69BoNOD7%2FX1HZlByLmRF7AAAAAElFTkSuQmCC',
+          alt: 'Tag : Infp',
+        },
+        {
+          src: 'https://img.shields.io/badge/90s--born-white?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAJEUlEQVR4nO2bf4xVxRXHP%2B%2FtFpAfAlaLSpEfRRExpBVpSpRDQmtjrYlBb01EGtBC2rS1EKqiaStq2thGiWKbmv6yUgtpw2DbxFaTNm051mJpsaktP9yuP4AiUrbgggi7gNs%2Fzlz27n0z7719u%2FuEjd9ks%2B%2BemTP3nLkzZ845M1Po6OigL6GSjAZmAJOBC4ELgLOB4cAwX%2B0g0Aq8DjQB24CtwAZRt6sv5Sv0RQeoJNOAucBVmNI9wTbgN8AaUbepp7Ll0WsdoJIMAz4L3ARc1CuNlmIL8GPge6LuYG802OMOUElGAIuBLwFn9IJM1WAf8DCwUtS90ZOGau4AlaQAzAfuB87siRA9QAtwG7BK1NWkSE0doJJMBB4DLqvlpX2AZ4H5ou6l7jIWu8ugknwK2MTJozyYLM972bqFqkeAH%2FL3A1%2Fu7kvqjBXAbdVOiao6QCUZgFnfuT2TrW5YA9wk6torVazYAV75XwFX9o5sdcPTwDWVOqGsDfDD%2FlFOPeXBZH7U6xBFJSN4H3Bjr4lUf9wIfLNchegUUEkSYG0fCPVO4HpRF9Ql2AEqyQTgeSxg6Q9oBS4RdS%2FnC0qmgJ8zq%2Bg%2FyoPpsipkD0I2YD5weZ%2BLVH9cDizIE7tMAR%2FYNAFn1UuqOmMvcEE2gMqPgMX0X%2BXBdFucJZwYASrJUGA79Qtpq8VeYDmWLRoO7AEOA3%2Bosb19wLg0n9CYKfgclZU%2FhCUljgGjgfNqEGAD0Ay0e%2F4PEze4%2B4GHRd0jWaJKshTrhBZAsQ%2FXCgzwcl0ETAdOC7R5Bpa4eQD8CPDW8UXg%2FIggs0VdtMdVkruAe2LlHh8Xdb%2BN8I8HSpYoYJOouzRTrwg8A4wH7hR1q8rIdCFwB3A9pR3RjNmCjtQGzCCs%2FCFRV8B8gnJY6euF0OzLNpTh3wEMBj6fo380%2FeFzEFuADwGTyikPIOq2iboFwK3YaMliIqbziRHwILAk0EhQKZVkkKg7kqMNB9ryLyvTRoOoO56jDQUeAj7jSVcDQ4D3AndhU%2BUqUffHUJsxqCRrgSRHXinqlqQjIBTsLPNK5RsbDqhKMiRLF3WtmG34S4a83CuVb2M28JPMc8G38aaoW5ip%2BiTwc%2BC7WCr9pZjyKsnFKkksNfdEgHYlQFEleT%2Fh1PUvvVJ5tGAGZqNK0hgovzfz%2Bxei7s1AnaeAub4jAPKdFJsuW0JEv%2FewEfhZhG97gDZJJRlTBD4SYdoZoadKjxV1x7IF%2Fvk%2FGdKLkTbSGP01%2F%2F%2FcXHlQUWwJC%2BEyzNC9J1L%2BRoQ%2Bowh8MFQi6g6rJA1ZWm44H%2FFBU7a8AVun0zbas9MoMGJe9ZZ9Z6ZOA7bmh3A434Z%2F%2Fq9%2FjO0VNEXoUwvrZ163Drg2UNiIeYqjgbexLzsOyGZezwMOAA3YMN6NGbBHgOeAT3jeFEeB48Dj2PI0FfgXMAYoAK%2BLujaV5AYsrZXHWsxfyeNiYD1mgL%2Fo35MufYex7bivBvieaATGBgrwgneIulcztJdVuhjT3ZlpsM8bs3VYBxRjmxYqSSrcCABRtyNTViD%2BxcaJutA0UKCgkrwC%2FCjCG8LYInBOqETUdYi6t0NlmTp5G9ABvOUfG0o5TiBd%2FkriDt9GW4RvegV5xmPRbLU4s0jnDm1vYWA36h6OpK%2BjiUyV5L7MCAphtfc9tIr3D412QIWXlEN3oslDEXq5jc87gOkx%2BVLnStTNAm6v8P5h5ZKikyL0ef7%2F7Eh5d3AsQg%2F5Dlmsp9NbLIeVwA3lKhSJ9%2Fa1IUdH1K0WdYUywVE1%2B3OpbTkQKR8SoWfxbZXkT3Bi6SyB3xMIeYEpDhbWz7xuF6WOSIpRmDFLR0oBM2DHPL2Rrl%2BxFZgC%2FBX4PrBU1B1SSQb78nbfxu3A14EJ2PJ6Gp22Yz8wC%2FhdGcHzWIQtrUXffmpXitgyOAcLga%2FI8W1vxNbuWAfsAQaLui4BjkpyKTBH1H0lz6CSbPU%2FJ4u6QwCi7q1cnanpb1F3FFu3s%2BWxEbCKzlHTgHXoSKwDzhV190b41qkksyjtgJZGzE%2BeFmEE%2BIdK8lNgs38ei8X%2BsS8UW8JCGBShx0Lr3aLuzjxRJTkdaPIR5vIIb8i1317EDiOVw%2FmYws7%2FrcC8vpizUs38TdHd7fnjIaKoO4B9oNkxe0DY3mwtAi%2FE3ubX07OxEyAjMMWf9MWxr9cdhKJJiPsSA0JEP2XasdT3qAhvyLd4oZFI6CnqCirJcFG3J0tXSdIQOSZkqtTpkfJqEMsRxkZXGotEPybhznuuKOp2EghbVZJRkXxAmgn6X%2BRFaYR4Thljlg7TVyLl4yL0YMLDT4EWYLOoey1UJ8DbJOp2pHPw6QDD1ZGXLQQWhFYAj9QXfx%2FxAxU3A1d4wUP4ZIQ%2BRiUZE5Frjqgrd4Ajn%2FN8CjqH61pyGwbAN4hEVqGEpP%2Fao4AvZMhfA36gkgwUdW0Z%2FgMEVhGVZCAW7k6MKDEDW89DoW0QXq7JWEicxVrotMJ%2FxlLFWYxSSdQ3EjNWWQyi1AscqJL83sf41awOH8OSouXqzlZJbqmirRRnYY7ZjAytGdO5y87QrdghqDx2AAtjOX3PuxT4FnGrDiCi7pkIfyM2WpZQnfHcCPwdeEjUbYu0OQSLW%2BbTVXmwQ1SdGyOeYRjmFI2MvHQX8E9fpw2z1BOwGL2aJbEN6%2FnNmPd5xPNNBC4hkpeogL8B%2F%2FZ%2FLZifMAQzolMwlzqP%2FVg%2B8yCU7g4vB%2B6uQZBTCfeIurvTh7wnthLbjOyv2IudMT6BLh3gc3jL6ihQvbEsn1MM%2BeKPYWdv%2BxuexXTrgtghqQ9g54H7yzmhVmBa6DB1MBrzFRf1tVR1xKLYSfJoOOrP1YX8glMND8TOCELleHwZsLp35akrVlMhM%2FzuYelKrfgGriG8V3eyYg1VKA9VpqR8Q%2FOwdNjJjhXAvGqUhxruDPlrKT%2BkZxmfvsABLGjr1gHvdy9N1fI2UdcMzMQyOy21tNFLaPEyzKxFeei9i5NLgFuo78XJ7wAPvmMXJ%2FPIXJ29GUtB9QW2Yld4Tp6rsyH4y9OfxpKbsfxetWgGfg08flJfno4hc31%2BCrblnl6fH4mdDj2KbYfv939NWJp%2BM3W4Pv9%2FnQs7CNLFIBEAAAAASUVORK5CYII%3D',
+          alt: 'Tag : 90s',
         },
         {
           src: 'https://img.shields.io/badge/Photography-%2372695c?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC%2FxhBQAACklpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAAEiJnVN3WJP3Fj7f92UPVkLY8LGXbIEAIiOsCMgQWaIQkgBhhBASQMWFiApWFBURnEhVxILVCkidiOKgKLhnQYqIWotVXDjuH9yntX167%2B3t%2B9f7vOec5%2FzOec8PgBESJpHmomoAOVKFPDrYH49PSMTJvYACFUjgBCAQ5svCZwXFAADwA3l4fnSwP%2FwBr28AAgBw1S4kEsfh%2F4O6UCZXACCRAOAiEucLAZBSAMguVMgUAMgYALBTs2QKAJQAAGx5fEIiAKoNAOz0ST4FANipk9wXANiiHKkIAI0BAJkoRyQCQLsAYFWBUiwCwMIAoKxAIi4EwK4BgFm2MkcCgL0FAHaOWJAPQGAAgJlCLMwAIDgCAEMeE80DIEwDoDDSv%2BCpX3CFuEgBAMDLlc2XS9IzFLiV0Bp38vDg4iHiwmyxQmEXKRBmCeQinJebIxNI5wNMzgwAABr50cH%2BOD%2BQ5%2Bbk4eZm52zv9MWi%2FmvwbyI%2BIfHf%2FryMAgQAEE7P79pf5eXWA3DHAbB1v2upWwDaVgBo3%2FldM9sJoFoK0Hr5i3k4%2FEAenqFQyDwdHAoLC%2B0lYqG9MOOLPv8z4W%2Fgi372%2FEAe%2Ftt68ABxmkCZrcCjg%2F1xYW52rlKO58sEQjFu9%2Bcj%2FseFf%2F2OKdHiNLFcLBWK8ViJuFAiTcd5uVKRRCHJleIS6X8y8R%2BW%2FQmTdw0ArIZPwE62B7XLbMB%2B7gECiw5Y0nYAQH7zLYwaC5EAEGc0Mnn3AACTv%2FmPQCsBAM2XpOMAALzoGFyolBdMxggAAESggSqwQQcMwRSswA6cwR28wBcCYQZEQAwkwDwQQgbkgBwKoRiWQRlUwDrYBLWwAxqgEZrhELTBMTgN5%2BASXIHrcBcGYBiewhi8hgkEQcgIE2EhOogRYo7YIs4IF5mOBCJhSDSSgKQg6YgUUSLFyHKkAqlCapFdSCPyLXIUOY1cQPqQ28ggMor8irxHMZSBslED1AJ1QLmoHxqKxqBz0XQ0D12AlqJr0Rq0Hj2AtqKn0UvodXQAfYqOY4DRMQ5mjNlhXIyHRWCJWBomxxZj5Vg1Vo81Yx1YN3YVG8CeYe8IJAKLgBPsCF6EEMJsgpCQR1hMWEOoJewjtBK6CFcJg4Qxwicik6hPtCV6EvnEeGI6sZBYRqwm7iEeIZ4lXicOE1%2BTSCQOyZLkTgohJZAySQtJa0jbSC2kU6Q%2B0hBpnEwm65Btyd7kCLKArCCXkbeQD5BPkvvJw%2BS3FDrFiOJMCaIkUqSUEko1ZT%2FlBKWfMkKZoKpRzame1AiqiDqfWkltoHZQL1OHqRM0dZolzZsWQ8ukLaPV0JppZ2n3aC%2FpdLoJ3YMeRZfQl9Jr6Afp5%2BmD9HcMDYYNg8dIYigZaxl7GacYtxkvmUymBdOXmchUMNcyG5lnmA%2BYb1VYKvYqfBWRyhKVOpVWlX6V56pUVXNVP9V5qgtUq1UPq15WfaZGVbNQ46kJ1Bar1akdVbupNq7OUndSj1DPUV%2Bjvl%2F9gvpjDbKGhUaghkijVGO3xhmNIRbGMmXxWELWclYD6yxrmE1iW7L57Ex2Bfsbdi97TFNDc6pmrGaRZp3mcc0BDsax4PA52ZxKziHODc57LQMtPy2x1mqtZq1%2BrTfaetq%2B2mLtcu0W7eva73VwnUCdLJ31Om0693UJuja6UbqFutt1z%2Bo%2B02PreekJ9cr1Dund0Uf1bfSj9Rfq79bv0R83MDQINpAZbDE4Y%2FDMkGPoa5hpuNHwhOGoEctoupHEaKPRSaMnuCbuh2fjNXgXPmasbxxirDTeZdxrPGFiaTLbpMSkxeS%2BKc2Ua5pmutG003TMzMgs3KzYrMnsjjnVnGueYb7ZvNv8jYWlRZzFSos2i8eW2pZ8ywWWTZb3rJhWPlZ5VvVW16xJ1lzrLOtt1ldsUBtXmwybOpvLtqitm63Edptt3xTiFI8p0in1U27aMez87ArsmuwG7Tn2YfYl9m32zx3MHBId1jt0O3xydHXMdmxwvOuk4TTDqcSpw%2BlXZxtnoXOd8zUXpkuQyxKXdpcXU22niqdun3rLleUa7rrStdP1o5u7m9yt2W3U3cw9xX2r%2B00umxvJXcM970H08PdY4nHM452nm6fC85DnL152Xlle%2B70eT7OcJp7WMG3I28Rb4L3Le2A6Pj1l%2Bs7pAz7GPgKfep%2BHvqa%2BIt89viN%2B1n6Zfgf8nvs7%2Bsv9j%2Fi%2F4XnyFvFOBWABwQHlAb2BGoGzA2sDHwSZBKUHNQWNBbsGLww%2BFUIMCQ1ZH3KTb8AX8hv5YzPcZyya0RXKCJ0VWhv6MMwmTB7WEY6GzwjfEH5vpvlM6cy2CIjgR2yIuB9pGZkX%2BX0UKSoyqi7qUbRTdHF09yzWrORZ%2B2e9jvGPqYy5O9tqtnJ2Z6xqbFJsY%2BybuIC4qriBeIf4RfGXEnQTJAntieTE2MQ9ieNzAudsmjOc5JpUlnRjruXcorkX5unOy553PFk1WZB8OIWYEpeyP%2BWDIEJQLxhP5aduTR0T8oSbhU9FvqKNolGxt7hKPJLmnVaV9jjdO31D%2BmiGT0Z1xjMJT1IreZEZkrkj801WRNberM%2FZcdktOZSclJyjUg1plrQr1zC3KLdPZisrkw3keeZtyhuTh8r35CP5c%2FPbFWyFTNGjtFKuUA4WTC%2BoK3hbGFt4uEi9SFrUM99m%2Fur5IwuCFny9kLBQuLCz2Lh4WfHgIr9FuxYji1MXdy4xXVK6ZHhp8NJ9y2jLspb9UOJYUlXyannc8o5Sg9KlpUMrglc0lamUycturvRauWMVYZVkVe9ql9VbVn8qF5VfrHCsqK74sEa45uJXTl%2FVfPV5bdra3kq3yu3rSOuk626s91m%2Fr0q9akHV0IbwDa0b8Y3lG19tSt50oXpq9Y7NtM3KzQM1YTXtW8y2rNvyoTaj9nqdf13LVv2tq7e%2B2Sba1r%2Fdd3vzDoMdFTve75TsvLUreFdrvUV99W7S7oLdjxpiG7q%2F5n7duEd3T8Wej3ulewf2Re%2FranRvbNyvv7%2ByCW1SNo0eSDpw5ZuAb9qb7Zp3tXBaKg7CQeXBJ9%2BmfHvjUOihzsPcw83fmX%2B39QjrSHkr0jq%2Fdawto22gPaG97%2BiMo50dXh1Hvrf%2Ffu8x42N1xzWPV56gnSg98fnkgpPjp2Snnp1OPz3Umdx590z8mWtdUV29Z0PPnj8XdO5Mt1%2F3yfPe549d8Lxw9CL3Ytslt0utPa49R35w%2FeFIr1tv62X3y%2B1XPK509E3rO9Hv03%2F6asDVc9f41y5dn3m978bsG7duJt0cuCW69fh29u0XdwruTNxdeo94r%2Fy%2B2v3qB%2FoP6n%2B0%2FrFlwG3g%2BGDAYM%2FDWQ%2FvDgmHnv6U%2F9OH4dJHzEfVI0YjjY%2BdHx8bDRq98mTOk%2BGnsqcTz8p%2BVv9563Or59%2F94vtLz1j82PAL%2BYvPv655qfNy76uprzrHI8cfvM55PfGm%2FK3O233vuO%2B638e9H5ko%2FED%2BUPPR%2BmPHp9BP9z7nfP78L%2FeE8%2FstRzjPAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAUkaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu%2B7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI%2FPiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA5LjEtYzAwMiA3OS5iN2M2NGNjLCAyMDI0LzA3LzE2LTA3OjU5OjQwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjYuMCAoMjAyNDA5MjUubS4yNzg3IDFjNDA4ZTApICAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDI0LTEwLTMwVDE1OjMyOjIxKzA5OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyNC0xMC0zMFQxNjowOTo0MyswOTowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyNC0xMC0zMFQxNjowOTo0MyswOTowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZDQ5NmZiMTItZjUwYi1lZTQyLTg5MjYtYzg0ZmVmZTU4ZTZjIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOmQ0OTZmYjEyLWY1MGItZWU0Mi04OTI2LWM4NGZlZmU1OGU2YyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmQ0OTZmYjEyLWY1MGItZWU0Mi04OTI2LWM4NGZlZmU1OGU2YyI%2BIDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZDQ5NmZiMTItZjUwYi1lZTQyLTg5MjYtYzg0ZmVmZTU4ZTZjIiBzdEV2dDp3aGVuPSIyMDI0LTEwLTMwVDE1OjMyOjIxKzA5OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjYuMCAoMjAyNDA5MjUubS4yNzg3IDFjNDA4ZTApICAoV2luZG93cykiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk%2BIDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY%2BIDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8%2BatvsTQAAAadQTFRF7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2B7a0%2BGb2jvwAAAIx0Uk5TAAIDBQYHCAkKCw4PERMUFxgZHR8gIyQlJigpKi4vMDg5PUBBQ0RFRktMTlJVVldYWVpbXF1eYmVnaW1yc3R1dnp9foOFhoeJi46PkJGSk5eYmp6go6Wmp6usra6vsbW2uLm6vL2%2Bv8HCxMXIy8zN0NPV1tfY29ze3%2BLk5%2Bjr7O3u8vP09ff4%2Bvv8%2Ff7O9MeuAAADGElEQVRYw7VX%2Fz9TYRg9MjSkkaTpC%2Bt7ynwpNIWyL0xDIpYVKqHRUJvQsM0snD%2B6H2x39969d7trOj%2Fd9z7POfu89312nvcBNFBvdXj9oXAkEg75vQ5rPfKCxb1GFdbcFr3sqr51CrHeV6WDXumIUBMRZ2Uuvm2PWbFny0o3LzInFs3a%2FM4T6sBJpxZ%2FiDoxJOZPUzemRfxZ5oHZTP4M88KMmj%2FMPDGs5Hcwb3TI%2BTWijB8yiOI1MoGAIN4s%2F4VmQUIgHe4WhLeVe9wWpHSngqUJQXRMKTAmSEmUJoMu0Q67ig0yFHeJclynfOMR%2FxFHRgBAb%2FrNd3vP8yQGBhUYSL3vsa%2Bm83sBAFvSul%2BfZfVLhC0AaJSWk3pNb1KiNALwSCvdzlsvUTwAQqlF%2FHxG5gVLe7sl00mN8RQnBNRKarEKVd5dX4wkY757qkBFTCLVolV6PqgEgMsbP68AAIom0l97okjp3AdSpFVWRacCNvIFABgCJH%2B9efJoMEQyUKIh4IJPJXDx80I1ACyTiWSxP06QyxoCPqyoBFL9gYyagZtxbr1EdYy0iQVWsCkUMMRPz%2FgZSW7gGhk3CAU2sSsUsJLvAcDw6gPJT5girUKBXUSFAuPkreTj1d%2BkyUSOCwWiGgKL%2FCPVz1OyD3%2B4pCEg3sIqo6VSwySHEOGKxhbEH%2FErj02p53Nvv10qOeaCxkcUH%2BMoeV9%2B8g8VHqc4Rp9Q4AH5RS6woBBUFJJLXEh7Cl9vJne1SrlNLNBC8k5qcZtki1igTfZ3VghgmqTdBAAmu7qhywRqZYaiFMBHkvH5kZH5eEY7TwuE5JamEoA97QcOaAh45KYaK1cZT8PrIEkGPQ2qQHlMbqqSrR8aM%2B2zrqmpLvOt8VBu6%2BnGcl2vK99QNhaptc3pFZhTtrZ0LY2W6aGXjaqaq6y970yN58S7nYz2Lrxg6EB39itOTgRyXbJyoeYsr3mFXzQLv%2BoWftkGvPr5XnGJufXy3f9r5AHMS7n5S%2BbsY99%2Bdvq%2BLefg6Sxs8Cx89D2D4Ts1%2Fju9%2FmA4EgkH%2FV6n9vj%2FFwxxo%2FFmCVqNAAAAAElFTkSuQmCC&logoColor=white',
@@ -86,18 +96,15 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
-      <p class="text-sm text-neutral-700">
-        1997.04.05 - INFP~ENFP
-      </p>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{t("personal.profile_content.title")}</h2>
       <br>
       <p>
-        Welcome! I'm a <b>Programmer</b> who wanna develop some interesting game with touching story.<br />
-        And always studying new design pattern and algorithm.&#128516;<br />
-        Currently I'm working on my indie project, it'll be update to the blog page later soon.
+        <Trans i18nKey="personal.profile_content.description">
+          <b>0</b><br />
+        </Trans>
       </p>
       <br />
-      <b>Tools & Skills: </b>
+      <b>{t("personal.profile_content.inline_subtitle_skill")}: </b>
       <p style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center;">
         <img
           src="https://img.shields.io/badge/JetBrains-Rider-red?logo=rider"
@@ -134,7 +141,7 @@ const metadata = {
       </p>
 
       <br />
-      <b>Learning: </b>
+      <b>{t("personal.profile_content.inline_subtitle_learning")}: </b>
       <p style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center;">
         <img
           src="https://img.shields.io/badge/DirectX-black"
@@ -181,44 +188,39 @@ const metadata = {
     </Fragment>
   </ProfileContent>
 
-  <!-- Steps Widget ****************** -->
+  <!-- Steps Widget : Resume ****************** -->
 
   <Steps
     id="resume"
-    title="Work experience"
+    title={t("personal.work_experience.title")}
     items={[
       {
-        title:
-          'Contents Programmer <br /> <span class="font-normal"><a href="http://www.airpass.co.kr/ko/" target="_blank" rel="noopener noreferrer">Airpass, Hanam, Korea</a></span> <br /> <span class="text-sm font-normal">2021 / 08 - 2024 / 09</span>',
-        description: `- Collaborate with game development team member to develop mini-game by Unity Engine and also Unreal Engine.<br />
-          - Creating framework for Unity development and manage git repository.<br />
-          - Test the sensor sdk or packaging one from other collaborating company for other team member.<br />
-          - Sometimes design game UI.`,
+        title:t("personal.work_experience.airpass.title"),
+        description: t("personal.work_experience.airpass.description"),
         icon: 'tabler:briefcase',
       },
       {
-        title:
-          'Graduate and Self-Study<br /> <span class="text-sm font-normal">2019 / 10 - 2021 / 07</span>',
-        description: `Have some part-time jobs and self-study`,
+        title:t("personal.work_experience.self_study.title"),
+        description: t("personal.work_experience.self_study.description"),
         icon: 'tabler:address-book',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
+  <!-- Steps Widget : Education ****************** -->
 
   <Steps
     id="resume"
-    title="Education"
+    isReversed
+    title={t("personal.education.title")}
     items={[
       {
-        title:
-          'Self-Study<br /><span class="font-normal">SNS Game Academy .Korea</span> <br /> <span class="text-sm font-normal">2020 - 2021</span>',
+        title:t("personal.education.self_study"),
         icon: 'tabler:address-book',
       },
       {
-        title: `Bachelor of Digital Media Technology <br /> <span class="font-normal">JiLin Animation Institute .China(4 years university college)</span> <br /> <span class="text-sm font-normal">2015 - 2019</span>`,
+        title:t("personal.education.jai"),
         icon: 'tabler:school',
       },
     ]}
@@ -228,35 +230,35 @@ const metadata = {
   <!-- Features3 Widget ************** -->
 
   <Features3
-    title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design and programming."
+    title={t("personal.skills.title")}
+    subtitle={t("personal.skills.subtitle")}
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Game Programming',
-        description: 'Familiar with Unity Engine and Photon - Fusion SDK. Have some experience of Unreal Engine 4 and 5.',
+        title: t("personal.skills.game_programming.title"),
+        description: t("personal.skills.game_programming.description"),
       },
       {
-        title: 'Communication',
-        description: 'Experienced making <b>Restful API</b> communication package for Unity and also coded for Unreal. And socket communication with <b>UDP</b> and <b>TCP</b>. Besides <b>Serial</b> communication and <b>BLE</b> communication also.',
+        title: t("personal.skills.communication.title"),
+        description: t("personal.skills.communication.description"),
       },
       {
-        title: 'Online Game Solution',
-        description: 'Using <b>Photon-Fusion</b>, <b>Mirror</b>, <b>FishNet</b> SDK for developing online game for Unity.',
+        title: t("personal.skills.online_game_solution.title"),
+        description: t("personal.skills.online_game_solution.description"),
       },
       {
-        title: 'Unity Framework Generation',
-        description: 'Develop some tools for game development in Unity by <b>Unity Editor Script</b> and <b>C# native library Dll</b>.',
+        title: t("personal.skills.unity_framework.title"),
+        description: t("personal.skills.unity_framework.description"),
       },
       {
-        title: 'Optimization',
-        description: 'Optimize & Refactor the code and resources in Unity for better performance.',
+        title: t("personal.skills.optimization.title"),
+        description: t("personal.skills.optimization.description"),
       },
       {
-        title: 'Game UI Design',
-        description: 'Use <b>Photoshop</b> to create concept matched game UI and maybe UX also.',
-      },
+        title: t("personal.skills.ui_design.title"),
+        description: t("personal.skills.ui_design.description"),
+      }
     ]}
   />
 
@@ -264,19 +266,17 @@ const metadata = {
 
   <Content
     id="portfolio"
-    title="Experienced Projects"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
+    title={t("personal.portfolio.title")}
+    subtitle={t("personal.portfolio.subtitle")}
     isReversed
     items={[
       {
-        title: 'Description:',
-        description:
-          'A cartoon style multi-player mini game developed by Unity and Photon Fusion SDK.',
+        title:t("ui.text.description"),
+        description:t("personal.portfolio.donutcrush.description")
       },
       {
-        title: 'Role:',
-        description:
-          'Game logic and process programming.<br>Scenario and animations for process.<br>Http web request(Restful API) for ranking data.<br>Online and Local multi-play game logi programming.<br>Sensor communication code.<br>UI Design for button and title.',
+        title:t("ui.text.role"),
+        description:t("personal.portfolio.donutcrush.role")
       },
     ]}
     image={{
@@ -285,15 +285,15 @@ const metadata = {
     }}
     callToAction={{
       target: '_blank',
-      text: 'go to detail',
+      text: t("ui.button.detail"),
       icon: 'tabler:chevron-right',
       href: '#',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        DonutCrush: <br /><span class="text-xl">Project developed while working at Airpass.</span>
-      </h3>
+      <Trans i18nKey="personal.portfolio.donutcrush.main_description">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><br /><span class="text-xl"></span></h3>
+      </Trans>
     </Fragment>
 
     <Fragment slot="bg">
@@ -307,13 +307,12 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
-        description:
-          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
+        title:t("ui.text.description"),
+        description:t("personal.portfolio.raindowstudio_framework.role")
       },
       {
-        title: 'Role:',
-        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
+        title:t("ui.text.role"),
+        description:t("personal.portfolio.raindowstudio_framework.description")
       },
     ]}
     image={{
@@ -322,15 +321,15 @@ const metadata = {
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: t("ui.button.detail"),
       icon: 'tabler:chevron-right',
       href: '#',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        RaindowStudio Framework: <br /><span class="text-xl">Develop framework for personal Unity development.</span>
-      </h3>
+      <Trans i18nKey="personal.portfolio.raindowstudio_framework.main_description">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><br /><span class="text-xl"></span></h3>
+      </Trans>
     </Fragment>
 
     <Fragment slot="bg">

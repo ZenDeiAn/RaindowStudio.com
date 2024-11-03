@@ -8,7 +8,7 @@ import LoadingScreen from "~/components/common/LoadingScreen.astro";
 import { Trans } from "astro-i18next/components";
 import { getPermalink, getBlogPermalink } from "~/utils/permalinks";
 import { t, changeLanguage } from "i18next";
-import { localizePath } from "node_modules/astro-i18next/src";
+import { localizePath } from "astro-i18next";
 
 changeLanguage("ko");
 
@@ -22,31 +22,32 @@ const metadata = {
   <!-- <LoadingScreen></LoadingScreen> -->
   <Fragment slot="header">
     <Header
+      logoLink={localizePath('')}
       links={[
         {
           text: t("index.header.blog.title"),
           links: [
             {
               text: t("index.header.blog.list"),
-              href: getBlogPermalink(),
+              href: localizePath('/blog'),
             },
             {
               text: t("index.header.blog.article"),
-              href: localizePath("get-started-website-with-astro-tailwind-css", "post"),
+              href: getPermalink("get-started-website-with-astro-tailwind-css", "post"),
             },
             {
               text: t("index.header.blog.category"),
-              href: localizePath("tutorials", "category"),
+              href: getPermalink("tutorials", "category"),
             },
             {
               text: t("index.header.blog.tag"),
-              href: localizePath("astro", "tag"),
+              href: getPermalink("astro", "tag"),
             },
           ],
         },
         {
           text: t("index.header.aboutme"),
-          href: localizePath("/homes/personal"),
+          href: localizePath('/homes/personal'),
         },
       ]}
       actions={[{ text: "Download", href: "https://github.com/onwidget/astrowind", target: "_blank" }]}

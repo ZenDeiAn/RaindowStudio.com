@@ -1,0 +1,130 @@
+{
+    "ui":
+    {
+        "button":
+        {
+            "detail":"详细"
+        },
+        "text":
+        {
+            "role":"担当",
+            "description":"说明"
+        }
+    },
+    "index":
+    {
+        "header":
+        {
+            "blog":
+            {
+                "title": "博客",
+                "list": "博客列表",
+                "article": "文章",
+                "category": "分类",
+                "tag": "标签"
+            },
+            "aboutme":"关于"
+        },
+        "hero":
+        {
+            "title": "即便<0>大雨</0>从云层倾盆而落<1>雨云之上的<2>彩虹</2>依旧清晰",
+            "subtitle": "来自<0>ZenDeiAn</0>所定义的生活"
+        },
+        "note":
+        {
+            "title":"格言：",
+            "content":"<0>黑夜</0>给了我黑色的眼睛，我却用它来寻找<0>光明</0> - 顾成"
+        }
+    },
+    "personal":
+    {
+        "header":
+        {
+            "home":"标题",
+            "about":"关于我",
+            "resume":"履历",
+            "portfolio":"作品",
+            "blog":"博客",
+            "github":"GitHub"
+        },
+        "profile_content":
+        {
+            "title":"介绍",
+            "description":"你好! 我是想要开发有趣并深度的<0>游戏开发者</0>,<1>为此我依旧不断学习新的算法和设计模式。&#128516;<1>现在我正在开发自己的独立游戏，该项目将会后续发表在该网站的博客页面上。",
+            "inline_subtitle_skill":"工具 & 技能",
+            "inline_subtitle_learning":"学习中"
+        },
+        "work_experience":
+        {
+            "title":"履历",
+            "airpass":
+            {
+                "title":"游戏开发程序员<br /><span class=\"font-normal\"><a href=\"http://www.airpass.co.kr/ko/\" target=\"_blank\" rel=\"noopener noreferrer\">Airpass, Hanam, Korea</a></span><br /><span class=\"text-sm font-normal\">2021 / 08 - 2024 / 09</span>",
+                "description":"- 通过使用Unity和Unreal引擎与开发团队开发和感应器联动的游戏。<br />- 为Unity开发更加便捷，编写相关开发框架包，并管理git。<br />- 研究感应器的SDK,并编写感应器的通信代码到游戏。<br />- 有时候会设计游戏的UI。"
+            },
+            "self_study":
+            {
+                "title":"毕业后自我学习<br /> <span class=\"text-sm font-normal\">2019 / 10 - 2021 / 07</span>",
+                "description":"边打工边自己学习游戏开发相关知识。"
+            }
+        },
+        "education":
+        {
+            "title":"教育",
+            "self_study":"自我开发<br /><span class=\"font-normal\">SBS游戏学术学院 .韩国</span> <br /> <span class=\"text-sm font-normal\">2020 - 2021</span>",
+            "jai":"吉林动画学院<br /> <span class=\"font-normal\"></span>数字媒体技术 学士<br /> <span class=\"text-sm font-normal\">2015 - 2019</span>"
+        },
+        "skills":
+        {
+            "title":"技能",
+            "subtitle":"生活源于热爱",
+            "game_programming":
+            {
+                "title":"游戏程序开发",
+                "description":"熟悉Unity引擎和Photon-Fusion SDK。会用UE4、UE5引擎但不精通。"
+            },
+            "communication":
+            {
+                "title":"本地化",
+                "description":"英语和韩语游戏本地化中文简体。"
+            },
+            "online_game_solution":
+            {
+                "title":"线上游戏开发",
+                "description":"熟悉使用Unity <b>Photon-Fusion</b>, <b>Mirror</b>, <b>FishNet</b> SDK来开发线上游戏。"
+            },
+            "unity_framework":
+            {
+                "title":"便携化Unity开发",
+                "description":"通过编写<b>Unity Editor Script</b> & <b>C# native library dll</b>框架来让Unity开发游戏更加便捷。"
+            },
+            "optimization":
+            {
+                "title":"优化",
+                "description":"代码以及资源优化。"
+            },
+            "ui_design":
+            {
+                "title":"游戏UI设计",
+                "description":"使用<b>Photoshop</b>制作游戏的UI。"
+            }
+        },
+        "portfolio":
+        {
+            "title":"作品",
+            "subtitle":"请探索一下我的热情和创意聚集在一起形成的作品。",
+            "donutcrush":
+            {
+                "description":"使用Unity并Photon-Fusion SDK和FishNet SDK开发的多人卡通风迷你游戏。",
+                "role":"游戏的主要逻辑和流程编写。<br>过场以及UI动画制作。<br>排名Http web request(Restful API)代码编写。<br>线上：Photo-Fusion代码逻辑编写。<br>感应器代码。<br>主页面及按钮的UI设计。",
+                "main_description":"<0>甜甜圈围困：<1><2>于Airpass公司开发的游戏项目。</2></0>"
+            },
+            "raindowstudio_framework":
+            {
+                "description":"Unity开发框架",
+                "role":"C# 库、Unity C#脚本和编辑器脚本编写。",
+                "main_description":"<0>RaindowStudio Framework：<1><2>个人Unity开发用框架。</2></0>"
+            }
+        }
+    }
+}
