@@ -9,9 +9,10 @@ import Pagination from "~/components/blog/Pagination.astro";
 
 changeLanguage("en");
 
+export const lang = "en";
 export const prerender = true;
 export const getStaticPaths = (async ({ paginate }) => {
-    return await getStaticPathsBlogTag({ paginate });
+    return await getStaticPathsBlogTag({ paginate }, lang);
 }) satisfies GetStaticPaths;
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page, tag } = Astro.props as Props;

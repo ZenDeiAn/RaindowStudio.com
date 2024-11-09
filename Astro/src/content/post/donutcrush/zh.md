@@ -1,9 +1,10 @@
 ---
-publishDate: 2023-07-17T00:00:00Z
-title: AstroWind template in depth
-excerpt: While easy to get started, Astrowind is quite complex internally.  This page provides documentation on some of the more intricate parts.
-image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
+publishDate: 2024-11-03T20:12:00Z
+title: 甜甜圈围困
+excerpt: A cartoon style mini game. Supported online, local network match and ranking. 
+image: https://raw.githubusercontent.com/ZenDeiAn/RaindowStudio.com/refs/heads/main/Image/Blog/DonutCrush/Main.png
 category: Documentation
+lang: "zh"
 tags:
   - astro
   - tailwind css

@@ -1,0 +1,29 @@
+diff --git a/node_modules/astro-i18next/src/cli/transformer.ts b/node_modules/astro-i18next/src/cli/transformer.ts
+index 70004ea..42b0f19 100644
+--- a/node_modules/astro-i18next/src/cli/transformer.ts
++++ b/node_modules/astro-i18next/src/cli/transformer.ts
+@@ -142,6 +142,24 @@ export const transformer: ts.TransformerFactory<ts.SourceFile> =
+         )
+       )
+     );
++    statements.splice(
++      lastIndexOfImportDeclaration + 1,
++      0,
++      factory.createVariableStatement(
++        factory.createModifiersFromModifierFlags(ts.ModifierFlags.Export),
++        factory.createVariableDeclarationList(
++          [
++            factory.createVariableDeclaration(
++              "lang",
++              undefined,
++              undefined,
++              factory.createStringLiteral(locale as string)
++            ),
++          ],
++          ts.NodeFlags.Const
++        )
++      )
++    );
+     statements.splice(
+       lastIndexOfImportDeclaration + 1,
+       0,

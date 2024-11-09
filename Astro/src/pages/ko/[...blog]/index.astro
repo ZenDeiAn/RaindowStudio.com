@@ -1,5 +1,6 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
 import type { InferGetStaticPropsType, GetStaticPaths } from "astro";
 import merge from "lodash.merge";
 import type { ImageMetadata } from "astro";
@@ -11,15 +12,19 @@ import { getStaticPathsBlogPost, blogPostRobots } from "~/utils/blog";
 import { findImage } from "~/utils/images";
 import type { MetaData } from "~/types";
 import RelatedPosts from "~/components/blog/RelatedPosts.astro";
+import Header from "~/components/widgets/Header.astro";
 
 changeLanguage("ko");
 
+export const lang = "ko";
 export const prerender = true;
 export const getStaticPaths = (async () => {
     return await getStaticPathsBlogPost();
 }) satisfies GetStaticPaths;
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { post } = Astro.props as Props;
+console.log(`POST : ${lang}`);
+console.log(post);
 const url = getCanonical(getPermalink(post.permalink, "post"));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
 const metadata = merge({
@@ -39,6 +44,32 @@ const metadata = merge({
 ---
 
 <Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+        logoLink={localizePath('')}
+        links={[
+            {
+              text: t("index.header.blog.list"),
+              href: localizePath('/blog'),
+            },
+            {
+              text: t("index.header.blog.article"),
+              href: getPermalink("get-started-website-with-astro-tailwind-css", "post"),
+            },
+            {
+              text: t("index.header.blog.category"),
+              href: getPermalink("tutorials", "category"),
+            },
+            {
+              text: t("index.header.blog.tag"),
+              href: getPermalink("astro", "tag"),
+            },
+        ]}
+        actions={[{ text: "Download", href: "https://github.com/onwidget/astrowind", target: "_blank" }]}
+        isSticky
+        showToggleTheme
+      />
+    </Fragment>
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>

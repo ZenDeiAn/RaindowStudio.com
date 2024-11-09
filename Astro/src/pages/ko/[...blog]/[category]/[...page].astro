@@ -9,9 +9,10 @@ import Pagination from "~/components/blog/Pagination.astro";
 
 changeLanguage("ko");
 
+export const lang = "ko";
 export const prerender = true;
 export const getStaticPaths = (async ({ paginate }) => {
-    return await getStaticPathsBlogCategory({ paginate });
+    return await getStaticPathsBlogCategory({ paginate }, lang);
 }) satisfies GetStaticPaths;
 type Props = InferGetStaticPropsType<typeof getStaticPaths> & {
     category: Record<string, string>;
