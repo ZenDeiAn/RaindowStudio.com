@@ -1,14 +1,14 @@
 ---
-publishDate: 2024-11-03T20:12:00Z
-title: 甜甜圈围困
-excerpt: A cartoon style mini game. Supported online, local network match and ranking. 
-image: https://raw.githubusercontent.com/ZenDeiAn/RaindowStudio.com/refs/heads/main/Image/Blog/DonutCrush/Main.png
+publishDate: 2024-11-10T17:05:00Z
+title: RaindowStudio Unity Framework
+excerpt: Self-usage Unity develeopment framework.
+image: https://raw.githubusercontent.com/ZenDeiAn/RaindowStudio.com/refs/heads/main/Image/Blog/RaindowStudioFramwork/Main.png
 category: Portfolio
-lang: "zh"
+lang: "en"
 tags:
   - unity
 metadata:
-  canonical: https://blog.naver.com/zendeian/223653449683
+  canonical: https://github.com/ZenDeiAn/UnityDevelopment/tree/main
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';

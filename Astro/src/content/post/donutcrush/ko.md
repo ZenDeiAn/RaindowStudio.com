@@ -3,14 +3,12 @@ publishDate: 2024-11-03T20:12:00Z
 title: 도넛크러쉬
 excerpt: A cartoon style mini game. Supported online, local network match and ranking. 
 image: https://raw.githubusercontent.com/ZenDeiAn/RaindowStudio.com/refs/heads/main/Image/Blog/DonutCrush/Main.png
-category: Documentation
+category: Portfolio
 lang: "ko"
 tags:
-  - astro
-  - tailwind css
-  - front-end
+  - unity
 metadata:
-  canonical: https://astrowind.vercel.app/astrowind-template-in-depth
+  canonical: https://blog.naver.com/zendeian/223653449683
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';

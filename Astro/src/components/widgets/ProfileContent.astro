@@ -5,6 +5,7 @@ import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
+import 'animate.css'
 
 const {
   title = await Astro.slots.render('title'),
@@ -71,7 +72,7 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
           
             {
               image && (
-                <div class="profileImage">
+                <div class="profileImage animate__animated animate__flipInY">
                   {
                   typeof image === 'string' ? (
                     <Fragment set:html={image} />
@@ -158,6 +159,12 @@ const halfTagImagesB = tagImages.slice(halfTagImageLength);
 
     .profileImage {
       flex: 1 1 70%;
+    }
+
+    .animate__animated.animate__flipInY
+    {
+      --animate-delay: 1.5s;
+      --animate-duration: 2.5s;
     }
 
     .tagImagePartA, .tagImagePartB {
