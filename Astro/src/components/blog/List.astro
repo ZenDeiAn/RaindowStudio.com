@@ -9,12 +9,33 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<ul>
+<ul class="posts-grid-row">
   {
     posts.map((post) => (
-      <li class="mb-12 md:mb-20">
+      <li class="mb-12 md:mb-20 max-w-[500px]">
         <Item post={post} />
       </li>
     ))
   }
 </ul>
+
+<style>
+  .posts-grid-row {
+    display: grid;
+    column-gap: 3rem; /* Adjust spacing between items */
+    justify-items: center;
+  }
+
+  @media (min-width: 768px) { /* Adjust this breakpoint as needed */
+    .posts-grid-row {
+      grid-template-columns: repeat(2, 1fr); /* Two-column grid */
+    }
+
+      /* Apply the downward shift to every second item */
+    .posts-grid-row li:nth-child(2n) {
+      margin-top: 4rem; /* Adjust the offset as needed */
+      /* Or alternatively, use transform */
+      /* transform: translateY(10px); */
+    }
+  }
+</style>
