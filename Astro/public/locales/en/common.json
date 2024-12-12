@@ -50,7 +50,7 @@
         "profile_content":
         {
             "title":"About Me",
-            "description":"Hello! I'm a <0>Programmer</0> who wanna develop some interesting game with touching story.<1>And always studying new design pattern and algorithm.&#128516;<1>Currently I'm working on my indie project, it'll be update to the blog page later soon.",
+            "description":"Hello! I'm a <0>Programmer</0> who wanna develop some interesting game with touching story.<1>And always studying new design pattern and algorithm.&#128516;<1>Currently I'm working on my indie project : <a href=\"https://github.com/ZenDeiAn/MergeRogue\" target=\"_blank\" rel=\"noopener noreferrer\">@MergeRogue</a>.",
             "inline_subtitle_skill":"Tools & Skills",
             "inline_subtitle_learning":"Currently Learning"
         },
