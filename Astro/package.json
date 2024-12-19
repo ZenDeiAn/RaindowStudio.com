@@ -28,7 +28,7 @@
     "@astrolib/seo": "^1.0.0-beta.8",
     "@fontsource-variable/inter": "^5.1.0",
     "animate.css": "^4.1.1",
-    "astro": "^4.16.2",
+    "astro": "^4.16.18",
     "astro-embed": "^0.7.4",
     "astro-i18next": "^1.0.0-beta.21",
     "astro-icon": "^1.1.1",
