@@ -50,7 +50,7 @@
         "profile_content":
         {
             "title":"소개",
-            "description":"안녕하세요! 저는 재미있는 게임을 개발 하고 싶은 게임 <0>개발자</0>입니다.<1>이 목표를 위해서 항상 새로운 알고리즘하고 패턴을 공부하고있습니다.&#128516;<1>현재는 대모 프로젝트 : <a href=\"https://github.com/ZenDeiAn/MergeRogue\" target=\"_blank\" rel=\"noopener noreferrer\">@MergeRogue</a>를 개발하고 있습니다.",
+            "description":"안녕하세요! 저는 재미있는 게임을 개발 하고 싶은 게임 <0>개발자</0>입니다.<1>이 목표를 위해서 항상 새로운 알고리즘하고 패턴을 공부하고있습니다.&#128516;<1>현재는 데모 프로젝트 : <a href=\"https://github.com/ZenDeiAn/MergeRogue\" target=\"_blank\" rel=\"noopener noreferrer\">@MergeRogue</a>를 개발하고 있습니다.",
             "inline_subtitle_skill":"도구 & 스킬",
             "inline_subtitle_learning":"공부 중"
         },
