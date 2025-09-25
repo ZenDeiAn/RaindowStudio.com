@@ -147,7 +147,7 @@ export const footerData = {
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Privacy Policy', href: getPermalink('/privacy-policy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/zendeian' },
