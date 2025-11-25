@@ -50,7 +50,7 @@
         "profile_content":
         {
             "title":"介绍",
-            "description":"你好! 我是想要开发有趣并深度的<0>游戏开发者</0>,<1>为此我依旧不断学习新的算法和设计模式。&#128516;<1>现在我正在开发一个Demo项目 : <a href=\"https://github.com/ZenDeiAn/MergeRogue\" target=\"_blank\" rel=\"noopener noreferrer\">@MergeRogue</a>。",
+            "description":"你好! 我是想要开发有趣并深度的<0>游戏开发者</0>,<1>为此我依旧不断学习新的算法和设计模式。&#128516;<1>目前我在Google Play 商店上架了一款休闲游戏 : <a href=\"https://play.google.com/store/apps/details?id=com.raindowstudio.trapit&pli=1\" target=\"_blank\" rel=\"noopener noreferrer\">@Trap It</a>。",
             "inline_subtitle_skill":"工具 & 技能",
             "inline_subtitle_learning":"学习中"
         },
@@ -81,7 +81,7 @@
             "game_programming":
             {
                 "title":"游戏程序开发",
-                "description":"熟悉Unity引擎和Photon-Fusion SDK。会用UE4、UE5引擎但不精通。"
+                "description":"熟悉Unity引擎，会用UE4、UE5引擎。"
             },
             "communication":
             {
