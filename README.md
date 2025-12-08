@@ -1,13 +1,20 @@
-# [RaindowStudio](https://raindowstudio.com/)
-This is my personal blog where I write about [Development](), [Memo](), [Photography](), [Desgin]() etc..
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-## References
-> - Built using [Astro](https://astro.build/) as the static site generator with [Astrowind](https://astrowind.vercel.app/) theme.
-> - Deployed using [Netlify](https://www.netlify.com/).
-> - The domain is managed via [Namecheap](https://www.namecheap.com/).
+# Run and deploy your AI Studio app
 
-Website structure inspired & referenced by [GhistWillian's personal blog website](https://gistwillan.cn/) which og is  [Hexo theme : AnZhiYu](https://github.com/anzhiyu-c/hexo-theme-anzhiyu).  
-The reason why not just use Hexo with AnZhiYu theme is personally wanna learn a bit of html, css and the recently poular website build tool Astro.  
-  
+This contains everything you need to run your app locally.
 
-Feel free to browse the content.
+View your app in AI Studio: https://ai.studio/apps/drive/1Fktls-VukIICf8Jtz6-8NJ5Dk_j9uVlX
+
+## Run Locally
+
+**Prerequisites:**  Node.js
+
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
