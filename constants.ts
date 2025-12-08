@@ -216,6 +216,7 @@ export const BLOGS: BlogPost[] = [
     tags: ['Game', 'Development', 'Casual', 'Arcade'],
     content: [
       { type: 'text', value: 'A Casual Arcade game made by Unity Engine.\nTrap the ball by rotating surrounded barrier.' },
+      { type: 'text', value: 'Solo developed by zendeian.' },
       { type: 'image', value: '/resources/blog/TrapItBanner.png', caption: 'Click to Google Play Store Page', url: 'https://play.google.com/store/apps/details?id=com.raindowstudio.trapit' },
       { type: 'text', value: 'Using Hybrid CLR + Unity Adderssable for Hotupdate.\nUsing Unity Cloud Services:\n- Cloud Save\n- Cloud Content Delivery\n- Economy(IAP Contains)\n- Unity Ads\n- Cloud Code\n- Remote Config\n- Authentication for Google Play Account login' },
     ]
